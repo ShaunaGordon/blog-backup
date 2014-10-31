@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: html/css | Shauna Gordon]]></title>
+  <link href="http://ShaunaGordon.com/blog/categories/html-slash-css/atom.xml" rel="self"/>
+  <link href="http://ShaunaGordon.com/"/>
+  <updated>2014-10-31T02:35:10+00:00</updated>
+  <id>http://ShaunaGordon.com/</id>
+  <author>
+    <name><![CDATA[Shauna Gordon]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Anatomy of an Octopress Theme]]></title>
+    <link href="http://ShaunaGordon.com/blog/2013/01/16/anatomy-of-an-octopress-theme/"/>
+    <updated>2013-01-16T01:14:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2013/01/16/anatomy-of-an-octopress-theme</id>
+    <content type="html"><![CDATA[<p>As you can probably see, I&rsquo;ve updated my theme to something a little less Octopress. I still have a few changes to make, such as getting a background image that fits a larger viewport. It probably also needs some polishing for things that I haven&rsquo;t run across yet, and deal with IE8 and below&rsquo;s lack of support for RGBA and media queries, and I might toy around with how it responds to different sizes (oh yeah, and tweak how lists in the content are laid out), but other than that, it&rsquo;s pretty much done.</p>
+
+<p>I&rsquo;m by no means a designer, so I doubt anyone but me will really like it, and if my history has anything to say, I probably won&rsquo;t like it myself in six months, but for the time being, at least, it&rsquo;s not the very generic, default theme. It also adds a base theme to the (currently insanely small) pool of Octopress themes.</p>
+
+<!-- more -->
+
+
+<h2>So, What&rsquo;s the Verdict?</h2>
+
+<p>Overall, it wasn&rsquo;t too bad. If you&rsquo;re already familiar with CSS preprocessers, such as LESS or Sass, then you&rsquo;re already well on your way to modifying the theme, Octopress uses a series of Sass files to generate the final stylesheet. Unfortunately, I take issue with a number of things with how the default theme handles things. It&rsquo;s no wonder there haven&rsquo;t been very many themes made. For such a simplistic and hacker-friendly framework, it&rsquo;s kind of a pain in the ass to theme.</p>
+
+<h3>The Sheer Number of Files</h3>
+
+<p>For a theme that&rsquo;s supposed to be mobile friendly and responsive, there are a <em>ton</em> of files. Granted, they all get generated and compressed down into a single, minified file, but it seems Sass and Compass don&rsquo;t merge common declarations that are split between files. This results in a lot of declaration overwriting. Fire up your favorite browser&rsquo;s developer tools, and let it display overwritten declarations, and you&rsquo;ll see what I mean.</p>
+
+<p>All those files also means a lot of digging to find things. A lot of files had variables, mixins, and/or extension templates within them, making it difficult to track down exactly what went where (and also made it possible to break the entire thing just by changing one element). It&rsquo;s no wonder they have the &ldquo;custom&rdquo; folder. At the folder level, all these files are organized pretty well; dig deeper, and you start getting into some trouble.</p>
+
+<h3>Context-Specific Variables (And a Ton of Them)</h3>
+
+<p>The default theme has 11 color variables, 6 font-family variables, and 13 measurement variables, just in the &ldquo;custom&rdquo; folder (there are a dozen or so more scattered throughout the theme SCSS files), and they&rsquo;re all context-specific names, like $sidebar-link-color, $footer-bg, and $sans. This is a bit of a nightmare for maintainability and customizability, because once you change the value of, say, $serif, to a sans-serif font, you&rsquo;ve destroyed the perceived meaning of the variable.</p>
+
+<h3>Nuke The World Resets</h3>
+
+<p>Yes, plural. There are two resets &ndash; one named &ldquo;reset-html5&rdquo; and one named &ldquo;global-reset&rdquo;. Global-reset, in particular, is a &ldquo;nuke the world&rdquo; reset. <em>Everything</em> is reset. Headings look the same as paragraphs, it&rsquo;s chaos. For a mobile-friendly site, that&rsquo;s a lot of things to get undone, only to be redone a short time later.</p>
+
+<p>Especially when dealing with mobile-friendly and responsive sites, I&rsquo;m a big fan of normalizing versus &ldquo;reseting&rdquo;. The reset-html5 seems to leave enough things alone, though, that I left that one. I might ultimately just use normalize.css, though.</p>
+
+<h3>Zero Documentation for Contributors</h3>
+
+<p>Octopress has a lot going for it, including great documentation for <em>using</em> the system (there&rsquo;s documentation <em>everywhere</em>, even in the source!), and even some for doing basic modifications to the default theme (overriding styles, changing the custom HTML in the templates, etc). However, for hackers&hellip;there&rsquo;s not much. Kind of ironic for what touts itself as &ldquo;a blogging framework for hackers&rdquo; (or, as I&rsquo;ve been inclined to call it, &ldquo;Nerdpress&rdquo;).</p>
+
+<p>&ldquo;But real hackers don&rsquo;t use documentation!&rdquo;</p>
+
+<p>Yeah&hellip;about that. Hackers are, at the core, problem solvers. If there&rsquo;s something we want done, we&rsquo;ll get it done. However, having documentation designed for contributors is part of being a good open source project, especially once you get large enough to <em>have</em> contributors. It saves time and headache.</p>
+
+<p>&ldquo;But Ruby&rsquo;s a readable language!&rdquo;</p>
+
+<p>That may be, but SCSS isn&rsquo;t so readable (granted, it&rsquo;s better than plain CSS in most cases), and the issue is compounded when things are spread across a dozen files. Additionally, in code documentation is less about <em>what</em> and more about <em>why</em> something is done a certain way.</p>
+
+<p>That said, the &ldquo;core team&rdquo; of this project I&rsquo;m pretty sure is still one person, so given that, it&rsquo;s not surprising that there&rsquo;s a lack of documentation for developers (especially since he&rsquo;s still active on it). Hopefully, that will be only a temporary complaint as the project continues to grow and mature.</p>
+
+<h3>The Silver Lining</h3>
+
+<p>Now, it really isn&rsquo;t all bad. There&rsquo;s actually a nifty little system in place that it seems most people don&rsquo;t know about. In the root folder, there&rsquo;s a hidden folder called <code>.themes</code> (for you Windows folks, the dot in front of the file or folder name makes it hidden). That&rsquo;s where your themes are stored. If you&rsquo;ve installed one of the custom themes, you may have noticed that that&rsquo;s where the instructions tell you to clone their git repository to, but if you&rsquo;ve never tried installing a theme, you probably don&rsquo;t know it&rsquo;s there.</p>
+
+<p>Additionally, the <code>rake install</code> command actually takes a parameter, of which &ldquo;classic&rdquo; is the default. This parameter allows you to tell Octopress what theme to install. Once you find out these two little tidbits, you no longer have to worry so much about your customizations getting nuked by an Octopress update.</p>
+
+<p>As I mentioned before, it&rsquo;s also pretty logical about how the files are organized within the folders, which can make it easier to find groups of styles, even if finding specific ones are more difficult. Also, the modular approach, while not without its drawbacks, does have the advantage of allowing you to leave alone whole files (or make only slight modifications) if you want to keep certain things (such as the styles for code blocks).</p>
+
+<h2>Final Thoughts (or TL;DR)</h2>
+
+<p>There&rsquo;s a pretty good base in the framework itself for allowing others to contribute themes, but it can certainly use some polish and refinement. I look forward to watching Octopress and its community evolve.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HTML5]]></title>
+    <link href="http://ShaunaGordon.com/blog/2010/07/07/html5/"/>
+    <updated>2010-07-07T00:00:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2010/07/07/html5</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>HTML5 is on its way to completion, and although it won't be officially completed for a couple of years, it's modular nature allows us to use it now. So, I decided to take a look at its information on the W3C website.</p><p>My wanderings led me to a page on <a href="http://www.w3.org/TR/html5-diff/">the differences between HTML4 and HTML5,</a> and so far, I've only made it as far as the new elements section (about halfway through the document). I have one thing to say.</p><p>It's going to be so <em>cool!</em></p><!-- more --><p>The issue with HTML4/XHTML is that it's essentially based off generic document creation. The tags are roughly akin to a set of Legos -- you've got the basic building blocks for just about anything. If you're creative enough, you can even turn the rectangular blocks into circular objects, but it takes some work. If you're not creative or ingenious enough, you end up with a lot of rectangular objects. Theoretically, there's nothing you <em>can't</em> make with Legos, and <a href="http://abcnews.go.com/US/video/lego-lovers-labor-love-10351869">this Lego exhibit</a>, and others, prove it. But to create the extraordinary works in those exhibits takes not only a lot of creativity, but a lot of time and Lego sets.</p><p>Web development is the same way. Obviously, the extraordinary websites, <a href="http://www.smashingmagazine.com/2008/11/26/50-beautiful-and-creative-portfolio-designs/">such as these featured at Smashing Magazine</a>, are entirely possible, even without resorting to making them giant image maps (and yes, even without Flash). Doing so, however, requires a lot of work, code-jockey creativity, and "Legos."</p><p>What makes HTML5 special? We no longer have to work with generic Legos. We now get the option of working with a giant K'Nex set.</p><p>By now, most people know about the <a href="http://9elements.com/io/?p=153">canvas element</a>, even if they haven't been following the HTML5 developments, but the toys don't end there. Not by a long run, and media sites like YouTube aren't the only ones that can get in on the action.</p><p>Even the simplest of sites can join the fun with elements such as &lt;header&gt;, used instead of something like &lt;div id="header"&gt;. Blogs and news sites can now have &lt;article&gt; tags, and form validation just got a whole lot simpler, with fields such as &lt;tel&gt; and &lt;email&gt; that have built-in validation, formatting, and sanitation capabilities.</p><p>There are new attributes for several existing elements, as well. &lt;input&gt; tags now have a "required" attribute, which will keep the form from validating if empty. They also have a "form" attribute, which allows them to be placed anywhere on a page, instead of as a child element of a form. The &lt;script&gt; element now has an "async" attribute which looks like it will aid in AJAX behavior.</p><p>In addition to added items, HTML5 also gets rid of a number of elements and attributes. They were removed because they were presentational in nature and are better handled by CSS. While this may seem minor to most people, this will help prevent a lot of headaches from maintainability issues from having those inline attributes. Granted, you can still have inline styling, but it prevents mixing of the circa 1999 practice and the more modern CSS practices.</p></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Review: Handcrafted CSS]]></title>
+    <link href="http://ShaunaGordon.com/blog/2010/06/21/review-handcrafted-css/"/>
+    <updated>2010-06-21T00:00:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2010/06/21/review-handcrafted-css</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p><a href="http://www.amazon.com/gp/product/0321658531?ie=UTF8&amp;tag=graywolfweb-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321658531">Handcrafted CSS: More Bulletproof Web Design, Video Edition</a><img src="http://www.assoc-amazon.com/e/ir?t=graywolfweb-20&amp;l=as2&amp;o=1&amp;a=0321658531" width="1" height="1" /></p><p>While at one of my previous clients, a coworker ordered this book as a resource at the office. I was the first to read it and simply couldn't put it down. <em>Handcrafted CSS: More Bulletproof Web Design</em> highlights modern CSS techniques that help build robust, attractive, designs.</p><!-- more --><p>Unlike most technical books, which often provide too much tech and not enough explanation, or too much theory and not enough tech, this book provides a fantastic balance, and even uses a running case study that it builds and enhances as the reader progresses through the book. Not only are readers able to understand the concepts the book presents, but they also learn ways to put the new concepts into practice.</p><p>One of the important points the book emphasizes is <em>progressive enrichment</em>, or designing for the future. CSS3 is complete enough that some of its features can already be used in modern browsers, which already provides us with a way to create beautiful designs that don't require much, if any (let alone extensive) use of images or JavaScript -- nearly everything can be done entirely in CSS. The principles of progressive enrichment put forth in the book allow developers to write forward-thinking code, creating designs that will essentially self-improve as browsers implement more CSS capabilities.</p><p>Another unique aspect to the book is that not only can it be easily read cover-to-cover without being too dry and code-saturated, but it also serves very well as a desktop reference. The chapters and sections are organized in an easy-to-access manner and cover, in fair depth, specific features of CSS (as opposed to more broad subjects encompassing several features).</p><p>This book is a must-have for intermediate to advanced CSS coders, be they designers or developers, and even beginning coders that are serious in learning how to write robust, forward-thinking, and semantic code.</p></div>
+
+]]></content>
+  </entry>
+  
+</feed>

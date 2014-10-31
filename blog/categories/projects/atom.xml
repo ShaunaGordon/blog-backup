@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: projects | Shauna Gordon]]></title>
+  <link href="http://ShaunaGordon.com/blog/categories/projects/atom.xml" rel="self"/>
+  <link href="http://ShaunaGordon.com/"/>
+  <updated>2014-10-31T02:35:10+00:00</updated>
+  <id>http://ShaunaGordon.com/</id>
+  <author>
+    <name><![CDATA[Shauna Gordon]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Project - Raze West Virginia]]></title>
+    <link href="http://ShaunaGordon.com/blog/2013/11/17/project-raze-west-virginia/"/>
+    <updated>2013-11-17T14:37:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2013/11/17/project-raze-west-virginia</id>
+    <content type="html"><![CDATA[<h2>The Client, and a Little History</h2>
+
+<p>While working at Fahlgren Mortine, I had the opportunity to work with the West Virginia Department of Health and Human Resources (DHHR) on the new website for their teen anti-tobacco campaign, Raze West Virgina.</p>
+
+<p>I&rsquo;m already familiar with teen anti-tobacco campaigns, having been involved in Pennsylvania&rsquo;s for a time when I was a teen, myself, but I found out that what makes West Virginia&rsquo;s somewhat unique &ndash; and very important &ndash; is that West Virginia ranks as the highest, or second highest (in some subcategories), of tobacco users nearly across the board, from adults, to pregnant women, to teens. When nearly a third of everyone around you, no matter the demographic, uses tobacco, that&rsquo;s a lot of peer pressure.</p>
+
+<h3>Enter Raze</h3>
+
+<p>Raze is one of several youth anti-tobacco campaigns in West Virginia. It&rsquo;s a little different from many others, because it&rsquo;s not just conferences. Rather, it&rsquo;s groups of teens at the school and community levels (&ldquo;crews&rdquo;), sponsored by an adult, that help create a grassroots anti-tobacco movement. They do this by organizing what they call &ldquo;commotions,&rdquo; or micro-events to help raise awareness and &ldquo;tear down tobacco lies.&rdquo; These commotions can be as simple as handing out fliers, or as large as holding an assembly.</p>
+
+<p>As an added incentive, organizing commotions earns the crew a certain number of points. At various thresholds, the crew then earns gear, ranging from pens to backpacks, emblazoned with the Raze logo.</p>
+
+<!-- more -->
+
+
+<h3>Our Role</h3>
+
+<p>As West Virginia DHHR&rsquo;s advertising campaign provider, Fahlgren Mortine was provided a number of tasks in an effort to rebrand the Raze campaign. Among them, was redoing the website and crew management system.</p>
+
+<h2>The Challenge</h2>
+
+<p>Raze had an existing crew management system and public-facing website, but it was getting old, and had become unweildly to maintain and use. They needed something more modern, more robust, and easier to use and manage. They needed something tailored to their needs, instead of an off-the-shelf solution that needed to be hacked around and have dozens of add-ons tacked on.</p>
+
+<h2>The Solution</h2>
+
+<p>Instead of going with another off-the-shelf solution, we decided to build a custom system from the ground up. This would allow us to provide them with only what they need, and provide it when they need it.</p>
+
+<h3>The Tech</h3>
+
+<p>In order to keep the codebase maintainable, we used the MVC framework, <a href="http://laravel.com/">Laravel</a>, as the backbone of the application. Combined with the PHP package management system, <a href="http://getcomposer.org/">Composer</a>, this allows us to swap out certain parts (particularly third-party libraries) nearly at will, without much consequence to the application as a whole.</p>
+
+<p><a class="right" href="/images/portfolio/raze_announcement_tooltip.jpg" title="The Dashboard page" target="_blank"><img src="/images/portfolio/thumbs/raze_announcement_tooltip.jpg" alt="Stylized tooltips to add that application feel" /></a></p>
+
+<p>To make development of the interface faster and easier, the dashboard interface was built with the help of <a href="http://getbootstrap.com/">Bootstrap</a>. This allowed us to spend less time on building interface components and making them look good, and more time putting them together into a user-friendly interface. It also allowed us to add small garnishes, such as stylized tooltips, for browsers that support the extra features.</p>
+
+<p>Even with the help of Bootstrap and Laravel, we still found ourselves using quite a bit of JavaScript, as well as a fair amount of CSS customization. To help keep these maintainable, and to allow us to generate minimized JavaScript and CSS files, we used the CSS preprocessor, <a href="http://sass-lang.com/">Sass</a>, and the <a href="http://nodejs.org/">Node.js</a>-based task runner, <a href="http://gruntjs.com/">Grunt</a>.</p>
+
+<h3>The Logic</h3>
+
+<p>While we also redid the public facing site (<a href="https://razewv.com">razewv.com</a>), the dashboard interface at <a href="https://razewv.com/manage">razewv.com/manage</a> is where the bulk of the work, and the heavy lifting, are done.</p>
+
+<p><a class="left" href="/images/portfolio/raze_dashboard.jpg" title="The Dashboard page" target="_blank"><img src="/images/portfolio/thumbs/raze_dashboard.jpg" alt="The Raze Dashboard" /></a></p>
+
+<p>At its core, it&rsquo;s a user and event management system. Adults and students sign up and join their crews. Adult advisors and crew leaders can schedule commotions based on pretermined choices, and can register for region and organization-wide events (such as Regional Raze Kickoff Events). When the commotions are completed and logged, the system tallies up the crew&rsquo;s total points, and standing compared to other crews, based on the point values of the commotions they performed.</p>
+
+<p>Site Administrators can also generate reports for various statistics, in addition to taking suggestions for, and adding, new commotions, scheduling events, and sending announcements.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>This was one of our first built-from-scratch content management systems, so one of the biggest lessons was that such systems are quite a bit larger than they appear.</p>
+
+<p>It was a fun project, though, and really allowed us to stretch our legs when it came to Laravel. It also allowed us to start incorporating some of the automation capabilities of Grunt, which will prove to be invaluable in future projects.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Project: Octopress Theme Toytown]]></title>
+    <link href="http://ShaunaGordon.com/blog/2013/01/25/project-octopress-theme-toytown/"/>
+    <updated>2013-01-25T09:51:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2013/01/25/project-octopress-theme-toytown</id>
+    <content type="html"><![CDATA[<p>As part of yet another redesign and blog migration, I needed to create a theme that wasn&rsquo;t so stock. I migrated my site to <a href="http://octopress.org/">Octopress</a>, a blogging platform that runs on GitHub&rsquo;s <a href="http://jekyllrb.com/">Jekyll</a> static site generator. It&rsquo;s a great platform, as anyone who follows my Twitter or Google+ accounts is aware, but the vast majority of sites that run on Octopress use the default theme, or some slight variation thereof. As good and nice as the default theme is, it&rsquo;s become very generic. I needed something different.</p>
+
+<!-- more -->
+
+
+<h2>Why &ldquo;Toytown&rdquo;?</h2>
+
+<p>The entire theme is based around the image in the background. That image is actually one of the views I get to see in the mornings and evenings when I go to and leave from work.</p>
+
+<p>You see, my office is located in one of the biggest shopping districts in the city, and it&rsquo;s pretty unique in that it&rsquo;s built as a blend between an indoor shopping mall and street-facing shops. Every year for the holidays (and evidently, well into the new year, for whatever reason), they string up lights on every building. It always reminds me of a gingerbread town, because of the way the lights are done &ndash; it&rsquo;s &ldquo;warm&rdquo; white rope lights lined along the corners and some other accent lines, much the same way you&rsquo;d have the frosting on a gingerbread building. They also have a couple of giant Christmas trees in the main open areas to the north and south of the main &ldquo;mall&rdquo; area. I have no doubt that, if viewed from above, in, say, a helicopter, it would look more like something you&rsquo;d find in a toy or model train store than an actual shopping center.</p>
+
+<h2>The Keystone of the Theme</h2>
+
+<p>Combine the natural &ldquo;toy-like&rdquo; aspect of the area this time of year, with the view from a few dozen feet above ground level, and a little manipulation in Gimp to create a <a href="http://www.inspiration.scottphotographics.com/amazing-miniature-tilt-shift-photography/">tilt-shift miniature effect</a>, and you end up with a fun background that looks more like a model than a real place.</p>
+
+<p>The first image I had of it wasn&rsquo;t as high quality as I&rsquo;d like, due to having taken it with my smartphone, especially at the scale needed to adequately make it a background for a website. So, as much as I loved the image itself (because it was late enough in the morning to be &ldquo;daytime&rdquo;, but you could still see the lights on the buildings), I decided to go out and take more pictures, this time with an actual camera. (Note: as of 1/25/13, the &ldquo;first image&rdquo; is still the one used. I don&rsquo;t have access to an SD card reader at the moment, so I can&rsquo;t get the pictures off of my camera.)</p>
+
+<p>It&rsquo;s also this image that I derived the color theme from, with the aid of the wonderfully useful <a href="http://colorschemedesigner.com">Color Scheme Designer</a>. The entire theme actually consists of just three base colors, with which I played with shades, hues, and opacity to achieve the desired effects.</p>
+
+<p>Ah, the joys of working in the digital realm.</p>
+
+<h2>Layout</h2>
+
+<p>Since it&rsquo;s largely a blog these days (I still have my &ldquo;About&rdquo; page, which has the online version of my resume and will eventually sport the download options, as well, but the main focal point is the blog), I decided to stick with the two-column theme, allowing for various supplementary things, such as recent or related posts, tag clouds, and so forth.</p>
+
+<p>Additionally, I&rsquo;ve made the site responsive. Anything above a 920px wide screen (or its rought equivalent, as it also responds to text size; more on that later), will have a single-column experience, with the extra goodies at the bottom. As the viewport gets smaller, some items will even shift their layout entirely, to accommodate the typical touch input of what are typically smaller screens. I also drop out the background image entirely (or rather, I don&rsquo;t add it in until larger sizes), to help keep bandwidth lower on devices that are more likely to be on a connection where download size is important.</p>
+
+<h2>320 and Up? Kind of.</h2>
+
+<p>One of the big new paradigms in web development is what&rsquo;s known as &ldquo;mobile first&rdquo; development. Among the large frameworks and bootstrapping tools is <a href="http://www.stuffandnonsense.co.uk/blog/about/this_is_the_new_320_and_up">320 and Up</a>, which starts its <abbr title="Cascading Style Sheets">CSS</abbr> media query &ldquo;breakpoints&rdquo; with 320px wide (the most narrow viewport size that most modern smartphones use) and work up from there.
+Surround your pullquote like this {" text to be quoted "}
+Until 1px no longer equals 1px.</p>
+
+<p>This is exactly what we&rsquo;re seeing with the new high-density (&ldquo;retina&rdquo;) displays, which have upwards of two or more times the number of Dots Per Inch as a 96<abbr title="Dots Per Inch">DPI</abbr> screen. To compound matters, these new devices don&rsquo;t have the same pixel densities. In fact, their densities are <a href="http://en.wikipedia.org/wiki/List_of_displays_by_pixel_density#Devices_by_manufacturers">all over the map</a>. 151, 132, 202, etc. Even if you go off of the &ldquo;CSS pixel ratio&rdquo;, you still have 1, 1.325, 1.5, 2, and who-knows-what else in the future (and you <em>know</em> not all of the real pixel densities match well to the &ldquo;CSS pixel ratio&rdquo;).</p>
+
+<p>Oh yeah, and, in part because of the above, these devices basically lie about their resolutions. The &ldquo;Retina&rdquo; iPhones report their resolutions as half of what they actually are. Additionally, some devices will increase their font size, but report a resolution that looks like a desktop.</p>
+
+<p>So what to do? <a href="http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/">How about not use pixel-based media queries to begin with?</a> This has two added bonuses &ndash; you no longer have to worry about CSS pixel to device pixel differences, and you can adjust based on zoom level.</p>
+
+<p>Go ahead, zoom in on the site. Isn&rsquo;t that cool?</p>
+
+<p>It&rsquo;s one of the first projects I&rsquo;ve actually done using the &ldquo;mobile-first&rdquo; paradigm, as well as using EMs, so it could probably use some polish, but it was fun to learn, and it even looks good on my Android devices.</p>
+
+<h2>Other Technologies</h2>
+
+<h3>HTML5 and CSS</h3>
+
+<p>Since it&rsquo;s an Octopress theme, it makes heavy use of HTML5, <a href="http://sass-lang.com">Sass</a>, and <a href="http://compass-style.org/">Compass</a>. I didn&rsquo;t do much with the HTML (I didn&rsquo;t need to), but I rewrote the CSS to better fit my programming style and make it simpler to do a simple color scheme change, without having to guess at the variable names.</p>
+
+<p>There is also a fair amount of CSS3 thrown into the mix, with a couple of transitions (namely, mouseover effects for the links), some rounded corners, and alpha-transparent backgrounds.</p>
+
+<h3>Ruby and YAML</h3>
+
+<p>Most of this section doesn&rsquo;t really relate to the theme itself, but since building the theme was part of the project of redoing my site, I&rsquo;m just going to include this, as well. The theme itself really only needs the HTML and CSS related stuff.</p>
+
+<p>Since GitHub is a Ruby shop, it&rsquo;s only natural that Jekyll and, by extension, Octopress are Ruby based. I didn&rsquo;t delve a whole lot into the Ruby code, but I did use it a little to customize a couple of plugins I found (incidentally, before I found better ones), and to add a little template logic into the header section, to display things like a link to GitHub, or a &ldquo;Highlights&rdquo; page (in my case, I used the &ldquo;Highlights&rdquo; page to list all entries under the &ldquo;projects&rdquo; category). I also added a couple entries to the Gemfile to add the GSL and Classifier gems to the Bundler install script, so that I could make use of the &ldquo;related posts&rdquo; capabilities of Jekyll.</p>
+
+<p>The configuration is all done through YAML files, which, of course, requires editing them so that things work as I want them to. This includes defining a separate set of sidebar widgets for the individual post view page vs the list view page, adding my own configuration options for the theme, and activating the &ldquo;related posts&rdquo; plugin. I also added an abbreviations plugin, which contains a list of known abbreviations and wraps any it finds in posts or pages in <code>&lt;abbr&gt;</code> tags. I&rsquo;ve added significantly to this list, so that it covers more abbreviations.</p>
+
+<h2>Conclusion</h2>
+
+<p><a href="https://github.com/ShaunaGordon/octopress-theme-toytown">The theme is up on GitHub</a>, so feel free to fork it and play around with it. I made it largely for personal use, so I have next to no documentation for it, but I&rsquo;ve tried to make it simple enough that it should be easy to modify. It&rsquo;s also probably going to be an evolving project, as I find things I don&rsquo;t like or are broken entirely. All in all, it&rsquo;s been a fun project so far, though.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Project: Rock Short Vine]]></title>
+    <link href="http://ShaunaGordon.com/blog/2011/01/22/project-rock-short-vine/"/>
+    <updated>2011-01-22T00:00:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2011/01/22/project-rock-short-vine</id>
+    <content type="html"><![CDATA[<div class='post'>
+<ul>
+    <li><b>Launched:</b> October 2010</li>
+    <li><b>Status:</b> Unrecognizabily Modified (The live site may look similar to original launch, but the underlying code is no longer intact.)
+</ul>
+<p>This is probably one of my favorite projects that I've done.</p><p>I don't think I can speak highly enough of my experience with <a title="Nick Smith creative" href="http://nicksmithcreative.com/">Nick Smith</a>. Not only did he create what I think was a phenomenal design, but he was pretty much my dream designer. This was my first project with him, but I hope I can do more.</p><!-- more --><p>One of the big things I take issue with is people treating websites like a screen-based viewer for printed media. So many people expect the exact same experience on Internet Explorer 6, or some ancient AOL browser, as on Chrome 7 or Safari 5 for Mac (I kid you not, I've had a client that insisted on pixel-perfect AOL 9 support). I'll go into detail about why this isn't a good idea in another post, but the Reader's Digest version is that it holds back web innovation and fails to take advantage of what the Web as a medium has to offer. What I loved about working with Nick is that he was different. He understood that the Web is not print, and shouldn't be treated as such.</p><p>Nick took this project on as a side gig in his spare time, which I think is why I only ended up with a full design for the front page, and because of that, I was able to work with him more to come up with a look for the rest of the site, and it showed how much he understood the need for slight changes in the design on my part, and a little improv from both of us.</p><p>We were under a bit of a time crunch, thanks to some breakdowns in upstream communication, so one of the things that wasn't clear in his design was what to do with the navigation and footer when the browser window is larger than the width of the design (it was already complex enough, and most of it was single-column anyway, so I opted to make it fix-width). With the drop shadows on the navigation, especially, I found it didn't look right keeping the red ribbon fixed-width, so I made it stretch with the screen. When I told Nick about it, he loved it and agreed that it was keeping with the <em>spirit</em> of the design.</p><p>A few days later, I was in need of a finalized design for the internal pages. Since I hadn't heard from Nick, I decided to provide a suggestion. The asphalt background was too much for text to sit directly on it, so an intermediary background had to be put behind any content. I mentioned to him that I really liked the crumpled paper look from the logos at the bottom of the first page and thought it should be carried over to the other pages to help tie them together. I also mentioned that I had tried using the paper images I had for the Places list and that they still seemed a little too busy for regular text (though logos did fine on them), so something a little more subtle would be needed. He suggested a "hinting" technique, where the tops and bottoms of content blocks had the paper background that would then fade into a plain white background, giving the illusion of being paper. With a little CSS magic to provide both background images to each content block, the effect looked great.</p><p>Due to the time crunch, I also wasn't able to add some effects (such as the block shadows) to Internet Explorer (IE uses proprietary filters for various CSS-like effects, and they tend to be a bit of a pain to have to continually update while in the development process, so I wait until last to minimize their changes). Therefore, the site sort of accidentally uses progressive enrichment. It's largely subtle or minor effects, such as a radial shadow on the asphalt background, gradients and drop shadows on the top navigation ribbon, a couple slightly rotated objects, and a lowered opacity of the Bearcats logo (to make it look like it's painted on the asphalt). None of these are really design-breaking, and certainly aren't functionality-breaking, though it does provide users of browsers that support these CSS3 features a more appealing experience.</p><p>I also got to play pretty extensively with the Google Maps API, as well as its ability to generate custom place markers (an idea I ran with). I had a lot of fun building the list of places (pulled from a database) that linked to pins on the map, so that clicking on a list item would make the map center on the pin and open an info bubble. While this was technically a feature originally done in the O Spot webapp by my predecessor, I was using a more recent version of the Google Maps API, which included a number of code changes, requiring changes to how the API was accessed and utilized, as well as rendering the pin generator used by O Spot obsolete. So, though I was able to reuse bits and pieces of the O Spot code, I still largely needed to write new code, thus allowing me to learn how to solve that problem myself.</p><p>All in all, it was a great mix of technologies and challenges, and I had a ton of fun on this project.</p></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Project: Shaunagordon.com]]></title>
+    <link href="http://ShaunaGordon.com/blog/2010/07/21/project-shaunagordoncom/"/>
+    <updated>2010-07-21T00:00:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2010/07/21/project-shaunagordoncom</id>
+    <content type="html"><![CDATA[<div class='post'>
+<ul>
+    <li><b>Status:</b> Retired</li>
+</ul>
+<p>In August 2009, I decided to try my hand at freelancing/contracting. At the time, I decided to work under a business name. Hoever, as I worked with it, it started becoming clear that it would be better for me to work as an individual, for a number of reasons. So, I rebranded myself.</p><!-- more --><h2>The Site Design</h2><p>I really liked the notes on corkboard look that the Milo's Deli project has and I wanted something like it, but with the notes on corkboard more prominent than what I felt Milo's is. As I thought about designs and layouts, though, I came to the conclusion that the designs I was coming up with wouldn't mesh well with the amount and type of content I was looking to have on my site. I still wanted the feel that I thought the notes on corkboard conveys -- the stream of thought and notes taken during the creative process (regardless of what that creative process is). That led to an idea for a marker board style idea, but since I couldn't think of a way to make the screen look like a marker board and keep it consistent (primarily, I fail at creating realistic-looking metal for a frame, not to mention that I'm not really enough of an artist to make a realistic-looking whiteboard, since it's not actually completely white). While trying to find a way to do it, I came across a tutorial on how to make a realistic chalkboard image and was inspired. Between it and an article I found on how to make sketch-like images (after failing to find adequate icons for what I wanted on my site), I had an idea I could run with.</p><h3>Background</h3><p>I'm not a big fan of using a large amount of images in site design. Images and image-based designs increase download times and have a tendency to break on very large or very small screens. When I'm creating a site for an audience that could view it on pretty much any extreme, I want it to be flexible enough that it still looks good even on those extremes. What resulted was a fun new CSS3 attribute: "background-size."</p><p>I think the idea behind "background-size" was the CSS trick of encasing an image (using the &lt;img&gt; tag) in a container, then setting the image to a percentage size of the container and the container a flexible-sized (percent or "em") measurement. Doing this trick automatically resizes the image based on the size of the container, which is in turn determined by the size of the screen. "Background-size" does essentially the same thing, except the image is the container's background. This allows the image to stretch or collapse to fit the container. It's still not a completed CSS3 spec, so I think there could be some improvements to implementation, but it's actually quite handy. As an added bonus, it's already supported by everything except Internet Explorer. IE is somewhat easily fixed by using a tiling background, instead. Unfortunately, it's not as elegant as the CSS3 attribute, but until IE9 becomes the dominent version of Internet Explorer, or unless I find out about some IE proprietary filter, it's what I'm stuck with.</p><p>Another fun point about the background is that it's actually composed of two different images, and a background color. The main background, which looks like a well-used chalkboard, complete with "gunge" from years of use, is actually a code-set background color with a semi-transparent "grunge" layer. Then, the not-fully-erased markings are layered on top, inside of a different element.</p><h3>Typography</h3><p>I absolutely love web fonts, and, by extension, services such as <a title="TypeKit - Legal Web Fonts" href="http://typekit.com/fonts">TypeKit</a>. It's liberating to be able to complete the look of a theme without having to resort to image-replaced text. Somehow, I don't think Georgia, Times, or Arial would quite work to complete the look of chalk on a chalkboard Granted, I didn't use it for the body text, but I figured it'd be a good idea to refrain from doing so for the sake of my eyes and those of anyone who comes to visit.</p><h3>Icons</h3><p>You might notice a handful of icons around the site. Those are ones that I created specifically to go with this theme and for my needs, since I couldn't find a set that I liked that would go with the rest of the look and had the icons I needed (specifically, file type icons that diferentiated between OpenDocument Format (.odt) and Microsoft Word Format (.doc). Some time with Inkscape and some references for the icons I was looking for, and voila! A custom icon set!</p><p>I plan on refining the set and added more icons. Once I complete the set (with things I don't use, such as Facebook and Bebo), I plan on releasing it for download. If I'm lucky, it'll make it into <a title="A gold mine for just about anything a web creative could want" href="http://www.smashingmagazine.com/">Smashing Magazine</a>, which would probably get me far more traffic than I could dream of otherwise (hey, I <em>can</em> dream, can't I?).</p><h2>Under the Hood</h2><p>To make updating easier, and to easily integrate a professional blog into it, the site is powered by the wonderful CMS, <a title="I love SilverStripe!" href="http://www.silverstripe.org">SilverStripe</a>. In addition to the core, it uses the blog, document object module, and SWFUpload modules, and runs a custom theme that I built. While most of the site is just the basic page type, styled, the portfolio page is actually a custom page type (and technically, the Home Page is custom, too, but there's not much to its customization) that's based on SilverStripe's documentation tutorial for creating a custom page type. Once I build the contact form, it will be its own page type. jQuery will also power slideshow/image gallery combinations on the portfolio page.</p><p>I've also once again used CSS3 techniques for various aspects of the site. The big use is actually in the main and navigation backgrounds, which uses the "background-size" attribute. As an accent, the text also has drop shadowing applied to it, to make it "pop" more.</p><h2>Lessons Learned</h2><p>I haven't yet done anything special with the website itself, so my work with SilverStripe was nothing new and things I had already done before. However, that's not to say that I haven't learned things from working on the project.</p><h3>Agile Development in Practice</h3><p>I've heard a lot about agile development practices and how it's the latest (kind of) and greatest way of creating an application these days. The problem is, none of the people I've worked with are actually using agile development. Instead of rolling out small, incremental changes once every couple of weeks, they roll a number of changes into large version releases. Even in college (and in a college that prides itself on keeping updated, no less), it was the waterfall method that was taught.</p><p>In the interest of getting the new design up quickly, I ended up working in an agile style, which was quite refreshing. As I said, I was originally taught the waterfall method, which meant knowing exactly everything the final product will do long before a code file is ever opened. I remember my senior project following that method. We had so much paperwork that we could literally hand what we had over to someone who was never involved in the planning phase and after looking through the plans would know exactly what was needed for every aspect of the website. We had flow charts, use cases, pseudocode, the works. We even had test plans for aspects of the program that weren't even close to being implemented.</p><p>Now, that's not to say that an agile development environment doesn't have any of these things, or doesn't go through the development lifecycle, but the software development life cycle (SDLC) is done in smaller portions and multiple times throughout an agile project, for each increment of the development. While I'm not formalizing and writing out flowcharts or use cases for each portion, I do go over them in my head (since I'm the only one that would ever work on this site in the foreseeable future) and do testing before launching each piece. The result, I've found, is a more satisfying feeling, because each piece is its own entity. Once it's finished, it can be integrated into the existing system and implemented right away, instead of it just being perceived as another cog in a giant machine that feels like it will never be finished.</p><h3>Fun with Inkscape and the GIMP</h3><p>Because I couldn't find icons that fit with the look I was going for, I had to make my own. Enter <a title="Vector editing, yay!" href="[sitetree_link id=]">Inkscape</a>, the open source alternative to Illustrator. With the help of a tutorial to get me started (I'm more of a <a title="Better than Photoshop, in my opinion" href="http://www.gimp.org/">GIMP</a> person when it comes to graphics, so I wasn't hugely familiar with Inkscape), and some playing with its options, I soon had some icons for the site. The only issue I had was that Inkscape's native save format is .svg, and its support for .png doesn't seem to allow for trimming and the use of transparencies, at least that I know of. So, off to the GIMP (the Gnu Image Manipulation Program) for trimming, resizing, and converting to .png images with transparencies. I liked it so much, I even did the same thing to make the horizontal rules for the site.</p><h2>Wrap-Up</h2><p>All in all, I'm proud of how this project turned out. I think the chalkboard look is creative and along the lines of what I was going for. I got to play with more CSS3 stuff, TypeKit, and SilverStripe, all of which I thoroughly enjoy.</p></div>
+
+]]></content>
+  </entry>
+  
+</feed>

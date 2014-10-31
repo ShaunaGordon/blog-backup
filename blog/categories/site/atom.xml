@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: site | Shauna Gordon]]></title>
+  <link href="http://ShaunaGordon.com/blog/categories/site/atom.xml" rel="self"/>
+  <link href="http://ShaunaGordon.com/"/>
+  <updated>2014-10-31T02:35:10+00:00</updated>
+  <id>http://ShaunaGordon.com/</id>
+  <author>
+    <name><![CDATA[Shauna Gordon]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Anatomy of an Octopress Theme]]></title>
+    <link href="http://ShaunaGordon.com/blog/2013/01/16/anatomy-of-an-octopress-theme/"/>
+    <updated>2013-01-16T01:14:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2013/01/16/anatomy-of-an-octopress-theme</id>
+    <content type="html"><![CDATA[<p>As you can probably see, I&rsquo;ve updated my theme to something a little less Octopress. I still have a few changes to make, such as getting a background image that fits a larger viewport. It probably also needs some polishing for things that I haven&rsquo;t run across yet, and deal with IE8 and below&rsquo;s lack of support for RGBA and media queries, and I might toy around with how it responds to different sizes (oh yeah, and tweak how lists in the content are laid out), but other than that, it&rsquo;s pretty much done.</p>
+
+<p>I&rsquo;m by no means a designer, so I doubt anyone but me will really like it, and if my history has anything to say, I probably won&rsquo;t like it myself in six months, but for the time being, at least, it&rsquo;s not the very generic, default theme. It also adds a base theme to the (currently insanely small) pool of Octopress themes.</p>
+
+<!-- more -->
+
+
+<h2>So, What&rsquo;s the Verdict?</h2>
+
+<p>Overall, it wasn&rsquo;t too bad. If you&rsquo;re already familiar with CSS preprocessers, such as LESS or Sass, then you&rsquo;re already well on your way to modifying the theme, Octopress uses a series of Sass files to generate the final stylesheet. Unfortunately, I take issue with a number of things with how the default theme handles things. It&rsquo;s no wonder there haven&rsquo;t been very many themes made. For such a simplistic and hacker-friendly framework, it&rsquo;s kind of a pain in the ass to theme.</p>
+
+<h3>The Sheer Number of Files</h3>
+
+<p>For a theme that&rsquo;s supposed to be mobile friendly and responsive, there are a <em>ton</em> of files. Granted, they all get generated and compressed down into a single, minified file, but it seems Sass and Compass don&rsquo;t merge common declarations that are split between files. This results in a lot of declaration overwriting. Fire up your favorite browser&rsquo;s developer tools, and let it display overwritten declarations, and you&rsquo;ll see what I mean.</p>
+
+<p>All those files also means a lot of digging to find things. A lot of files had variables, mixins, and/or extension templates within them, making it difficult to track down exactly what went where (and also made it possible to break the entire thing just by changing one element). It&rsquo;s no wonder they have the &ldquo;custom&rdquo; folder. At the folder level, all these files are organized pretty well; dig deeper, and you start getting into some trouble.</p>
+
+<h3>Context-Specific Variables (And a Ton of Them)</h3>
+
+<p>The default theme has 11 color variables, 6 font-family variables, and 13 measurement variables, just in the &ldquo;custom&rdquo; folder (there are a dozen or so more scattered throughout the theme SCSS files), and they&rsquo;re all context-specific names, like $sidebar-link-color, $footer-bg, and $sans. This is a bit of a nightmare for maintainability and customizability, because once you change the value of, say, $serif, to a sans-serif font, you&rsquo;ve destroyed the perceived meaning of the variable.</p>
+
+<h3>Nuke The World Resets</h3>
+
+<p>Yes, plural. There are two resets &ndash; one named &ldquo;reset-html5&rdquo; and one named &ldquo;global-reset&rdquo;. Global-reset, in particular, is a &ldquo;nuke the world&rdquo; reset. <em>Everything</em> is reset. Headings look the same as paragraphs, it&rsquo;s chaos. For a mobile-friendly site, that&rsquo;s a lot of things to get undone, only to be redone a short time later.</p>
+
+<p>Especially when dealing with mobile-friendly and responsive sites, I&rsquo;m a big fan of normalizing versus &ldquo;reseting&rdquo;. The reset-html5 seems to leave enough things alone, though, that I left that one. I might ultimately just use normalize.css, though.</p>
+
+<h3>Zero Documentation for Contributors</h3>
+
+<p>Octopress has a lot going for it, including great documentation for <em>using</em> the system (there&rsquo;s documentation <em>everywhere</em>, even in the source!), and even some for doing basic modifications to the default theme (overriding styles, changing the custom HTML in the templates, etc). However, for hackers&hellip;there&rsquo;s not much. Kind of ironic for what touts itself as &ldquo;a blogging framework for hackers&rdquo; (or, as I&rsquo;ve been inclined to call it, &ldquo;Nerdpress&rdquo;).</p>
+
+<p>&ldquo;But real hackers don&rsquo;t use documentation!&rdquo;</p>
+
+<p>Yeah&hellip;about that. Hackers are, at the core, problem solvers. If there&rsquo;s something we want done, we&rsquo;ll get it done. However, having documentation designed for contributors is part of being a good open source project, especially once you get large enough to <em>have</em> contributors. It saves time and headache.</p>
+
+<p>&ldquo;But Ruby&rsquo;s a readable language!&rdquo;</p>
+
+<p>That may be, but SCSS isn&rsquo;t so readable (granted, it&rsquo;s better than plain CSS in most cases), and the issue is compounded when things are spread across a dozen files. Additionally, in code documentation is less about <em>what</em> and more about <em>why</em> something is done a certain way.</p>
+
+<p>That said, the &ldquo;core team&rdquo; of this project I&rsquo;m pretty sure is still one person, so given that, it&rsquo;s not surprising that there&rsquo;s a lack of documentation for developers (especially since he&rsquo;s still active on it). Hopefully, that will be only a temporary complaint as the project continues to grow and mature.</p>
+
+<h3>The Silver Lining</h3>
+
+<p>Now, it really isn&rsquo;t all bad. There&rsquo;s actually a nifty little system in place that it seems most people don&rsquo;t know about. In the root folder, there&rsquo;s a hidden folder called <code>.themes</code> (for you Windows folks, the dot in front of the file or folder name makes it hidden). That&rsquo;s where your themes are stored. If you&rsquo;ve installed one of the custom themes, you may have noticed that that&rsquo;s where the instructions tell you to clone their git repository to, but if you&rsquo;ve never tried installing a theme, you probably don&rsquo;t know it&rsquo;s there.</p>
+
+<p>Additionally, the <code>rake install</code> command actually takes a parameter, of which &ldquo;classic&rdquo; is the default. This parameter allows you to tell Octopress what theme to install. Once you find out these two little tidbits, you no longer have to worry so much about your customizations getting nuked by an Octopress update.</p>
+
+<p>As I mentioned before, it&rsquo;s also pretty logical about how the files are organized within the folders, which can make it easier to find groups of styles, even if finding specific ones are more difficult. Also, the modular approach, while not without its drawbacks, does have the advantage of allowing you to leave alone whole files (or make only slight modifications) if you want to keep certain things (such as the styles for code blocks).</p>
+
+<h2>Final Thoughts (or TL;DR)</h2>
+
+<p>There&rsquo;s a pretty good base in the framework itself for allowing others to contribute themes, but it can certainly use some polish and refinement. I look forward to watching Octopress and its community evolve.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Yes, Yes, I Know]]></title>
+    <link href="http://ShaunaGordon.com/blog/2013/01/15/yes/"/>
+    <updated>2013-01-15T21:29:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2013/01/15/yes</id>
+    <content type="html"><![CDATA[<p>I know, I need to put a new theme on this thing. It&rsquo;s funny how you start seeing something everywhere once you find out about it for the first time.</p>
+
+<p>I&rsquo;m not totally sure when, but I fully plan on building a new theme. I&rsquo;d like to play around with responsive design, so this should be interesting.</p>
+
+<p>I&rsquo;ll also be looking into a sort of &ldquo;tag cloud&rdquo; for the sidebar, and a way to list the &ldquo;tags&rdquo; (or, as Octopress calls them, &ldquo;categories&rdquo;). I find it hard to believe that you can put categories into your posts and not be able to make use of them.</p>
+
+<p>Oh, and your tip for the day &ndash; I never remember to use &ldquo;rake&rdquo; for doing Octopress tasks. I always want to run &ldquo;octopress [task]&rdquo;, so I added to my ~/.bashrc the line:</p>
+
+<p><code>sh
+alias octopress="rake"
+</code></p>
+
+<p>To use it right away, just run <code>source ~/.bashrc</code>. :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Yet Another New Home for the Blog!]]></title>
+    <link href="http://ShaunaGordon.com/blog/2013/01/13/yet-another-new-home-for-the-blog/"/>
+    <updated>2013-01-13T21:22:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2013/01/13/yet-another-new-home-for-the-blog</id>
+    <content type="html"><![CDATA[<p>Yes, I know. It seems like I&rsquo;ve changed blog platforms on an annual basis. With a little luck, this will be the last time.</p>
+
+<h2>What Happened?</h2>
+
+<p>In short, I became disillusioned with Blogger. It seemed like a nice platform, at first, but I soon came to find the cracks in the foundation. So, after some thought about what I <em>really</em> want/need in a blog platform, I decided to go a different direction.</p>
+
+<!-- more -->
+
+
+<h2>The Problems With Blogger (and the Other Big Platforms)</h2>
+
+<p>Blog platforms are great for the people who don&rsquo;t know any better, but I&rsquo;m a web developer. Not only do I get the&hellip;ahem&hellip;<em>joy</em> of seeing how the sausage is made on platforms like Wordpress, where I can look at the source code itself and even have to modify it through extensions, but I also get glimpses of that process in platforms where I&rsquo;m not privy to the source code, such as Blogger.</p>
+
+<p>One of the first problems I ran into was the HTML that Blogger outputs in posts. It seems that Blogger was written back when Geocities was still popular, and people didn&rsquo;t care about semantic HTML, and Google doesn&rsquo;t seem to care about updating it.</p>
+
+<p>It&rsquo;s very difficult to control the style of text that isn&rsquo;t inside any kind of predictable tag block. It&rsquo;s also difficult to deal with code that&rsquo;s filled with &lt;div&gt;s that are nested twelve deep.</p>
+
+<p>The other big problem I found was the editor. I hate the standard WYSIWYG editors, in part because I spend most of my time typing in some form of code or markup. That said, wrapping everything in &lt;p&gt; tags gets tedious, so my favorite editor for blogging is one that will deal with that tedium, while allowing me to add HTML as needed.</p>
+
+<p>&ldquo;Why not just use Wordpress? It wraps everything in &lt;p&gt; tags!&rdquo; Yeah&hellip;it does a &ldquo;wrap the world&rdquo; thing. Instead of wrapping the text as it&rsquo;s being written, or even wrapping it on save, it does it only on <em>output</em>. Dynamically, which means it&rsquo;s an extra output step, which seems unnecessary to me. Additionally (and here&rsquo;s where the &ldquo;wrap the world!&rdquo; part comes in), it doesn&rsquo;t care what it wraps. Therefore, it wraps, say, images in their own paragraphs, or even in with a neighboring paragraph. Wordpress&rsquo;s editor also drives me insane with what it does and does not allow. Even the little bit I&rsquo;ve worked with it for client projects, I&rsquo;ve wanted to throw it out a window, due to the way the content editor tries to dictate what I can and can&rsquo;t post.</p>
+
+<p>To Blogger&rsquo;s credit, its editor doesn&rsquo;t do what Wordpress does. On the other hand, it takes the completely opposite approach &ndash; the HTML editor doesn&rsquo;t assume anything. This means that every single paragraph has to be wrapped in &lt;p&gt; tags, by hand.</p>
+
+<p>This wouldn&rsquo;t be too big a deal, if it weren&rsquo;t for the fact that I&rsquo;ve started posting from my mobile devices, which, of course, don&rsquo;t have great keyboards for typing HTML tags. That raises writing out the tags from mildly tedius to unacceptable. It also brings me to my next problem with Blogger.</p>
+
+<p>The mobile app isn&rsquo;t all it&rsquo;s cracked up to be. In fact, it kind of sucks. It&rsquo;s impossible to tell if it uses rich text or HTML mode. When you save a draft, it inserts HTML, but then encodes existing HTML. On a phone, there&rsquo;s also all of about three lines visible when the keyboard is active, thanks to all the chrome. In short, it&rsquo;s a mess.</p>
+
+<p>I&rsquo;m done with this crap. Time to move on to greener pastures.</p>
+
+<h2>Enter Octopress (and Disqus)</h2>
+
+<p>Followers of my G+ probably noticed that I voiced my issues and mind-leaks this past weekend. I enumerated the reasons for wanting a new blogging platform, which largely hasn&rsquo;t changed, except for wanting sane HTML output, and, ideally, to be able to write it in Markdown.</p>
+
+<p>While searching, I also stumbled on an entirely different approach to writing blogs &ndash; static site generators. You see, with your typical blogs, the content is stored in a database, and is dynamically generated each time someone visits that URL. This is a terrific mechanism&hellip;for Amazon. For a blog? Not so much, if you really think about it. The content doesn&rsquo;t change <em>that</em> much, and, with the help of a tool, even the lists can be updated accordingly. Granted, for Joe Schmoe, who has a blog because his &ldquo;brother&rsquo;s kid is good with computers,&rdquo; something like Wordpress or Blogger or even Dreamwidth is good enough. For someone who lives in the world of code? I can find something better.</p>
+
+<p>And it seems I may have.</p>
+
+<p>I found Octopress, but didn&rsquo;t give it much stock at first. When I first found it, I was under the mistaken impression that you put the system on a server in much the same way you would with Wordpress. It also seemed like one of those blogs where you couldn&rsquo;t have comments. I wanted commenting, so I looked elsewhere.</p>
+
+<p>Then I stumbled onto a blog that talked about migrating to Disqus and whatever their blog platform of choice ended up being. Now, I&rsquo;d seen Disqus around, and even commented using it, but never thought much of it. It&rsquo;s one of those things that you get so used to seeing that you no longer see it at all. What I found out while reading that blog was that not only could you add it to damn near anything, but you could migrate the comments, making it completely platform-agnostic. The fact that you can use the same Disqus login for any site that uses it is just icing on the cake. I was sold so quick that my Blogger blog already has it, so that I can migrate the comments over.</p>
+
+<p>Once I did that, options opened up for blogging platforms, because then, the built in capabilities (or lack of capabilities) no longer mattered. I now have my threaded comments wherever I go. So, I ended up circling back to Octopress, thanks to finding it pretty much everywhere when searching for &ldquo;markdown blog&rdquo;. So, I dug some more into it, and the more I read about how it works, the more I liked it.</p>
+
+<p>I found out that you don&rsquo;t actually set it up anywhere but on your working computer. It takes some command line, and the instructions are for Debian-based Linux distributions (including Ubuntu), but again, that&rsquo;s the world I live in, so no problem there. You then hook it up to a repository that&rsquo;s hosted somewhere, tell Octopress to generate everything, and upload the generated content.</p>
+
+<p>Upload it where? Well, there are a number of places you could, but the most convenient I found was actually GitHub (factoid: it&rsquo;s named &ldquo;Octopress&rdquo;, because it runs off of GitHub&rsquo;s Jekyll static site generator, and GitHub&rsquo;s mascot is the &ldquo;Octo-cat&rdquo;). GitHub has a &ldquo;GitHub Pages&rdquo; feature that automatically renders HTML from a repository. So, what&rsquo;s uploaded to GitHub in my <a href="https://github.com/ShaunaGordon/shaunagordon.github.com">personal repository</a>, is actually <em>the</em> source for the rendered blog. How cool is that? Oh, and GitHub is nice and allows you to use your own domain, free of charge (because, really, it&rsquo;s stupid to charge to allow that kind of use; it&rsquo;s a setting in a text file).</p>
+
+<h2>What Now?</h2>
+
+<p>Over the next&hellip;well, I don&rsquo;t know how long, I&rsquo;ll be working on migrating my Blogger over. Hopefully, the export feature is sane, and I&rsquo;ll be able to easily convert the HTML to Markdown, even if it means the third party tool. Then, I&rsquo;ll move my domain information over to it. I may even just move the rest of my site over, while I&rsquo;m at it, since I&rsquo;m already planning on reworking my site&rsquo;s design to be more mobile-friendly, and it&rsquo;s static and only a couple of pages, anyway. So, until then, I&rsquo;ll use the default Octopress theme for this blog. I&rsquo;ll have to see just how GitHub deals with more complex nameserver stuff.</p>
+
+<p>Ah, the world of web development, ain&rsquo;t it grand?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[New home for the blog!]]></title>
+    <link href="http://ShaunaGordon.com/blog/2011/10/07/new-home-for-blog/"/>
+    <updated>2011-10-07T00:00:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2011/10/07/new-home-for-blog</id>
+    <content type="html"><![CDATA[<div class='post'>
+<h2>Why the new home?</h2><p>SilverStripe is great, but, like the rest of the platform, there's not much to it. This isn't bad in and of itself, I just don't have time to essentially build and maintain the workings of a blog. So, I've decided to basically outsource that aspect, so that I can focus on the content of my blog, and the core of my website (which, admittedly, has been sorely neglected).</p><!-- more --><h2>Why Blogger?</h2><p>I'm a hopeless Google addict, for starters. :)</p><p>Seriously, though, while that is part of the reason (more Google accounts than I can count, multiple Android devices...), I actually put a lot of thought into where I was going to host my blog. </p><p>I am familiar with many different blogging platforms. My private blog has been on LiveJournal for nearly 10 years, though I've technically left it for its cousin site, Dreamwidth (I say cousin, because it's a fork of the LiveJournal codebase), I've dabbled in Wordpress off and on over the years, and even had and account at HubPages for a time. They all have their pros and cons, and are all great in their own right, but Blogger had what I needed:</p><ul><li>Simple posting interface (give me a text field and I'm happy)</li><li>Option to use HTML directly</li><li>Option to monetize (I'm still debating whether I'll actually do it, but having the option lets me make that choice)</li><li>Code highlighting*</li><li>URL customization (ability to use own)</li><li>Style customization</li><li>Free options</li><li>Hosted</li><li>Threaded comments</li></ul><p>*None of the blogging platforms that I looked at actually have this built in, but thankfully, there are now services such as Gist that allow embedding code snippets in any blog, so while I need it, it ended up a lower priority than it would have otherwise been.</p><p>Most of the platforms that I looked at have most of these options, so it pretty much came down to what had the most, and perhaps any extra goodies (such as Blogger's mobile app, which is nifty, albeit a little rough around the edges).</p><br /></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Project: Shaunagordon.com]]></title>
+    <link href="http://ShaunaGordon.com/blog/2010/07/21/project-shaunagordoncom/"/>
+    <updated>2010-07-21T00:00:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2010/07/21/project-shaunagordoncom</id>
+    <content type="html"><![CDATA[<div class='post'>
+<ul>
+    <li><b>Status:</b> Retired</li>
+</ul>
+<p>In August 2009, I decided to try my hand at freelancing/contracting. At the time, I decided to work under a business name. Hoever, as I worked with it, it started becoming clear that it would be better for me to work as an individual, for a number of reasons. So, I rebranded myself.</p><!-- more --><h2>The Site Design</h2><p>I really liked the notes on corkboard look that the Milo's Deli project has and I wanted something like it, but with the notes on corkboard more prominent than what I felt Milo's is. As I thought about designs and layouts, though, I came to the conclusion that the designs I was coming up with wouldn't mesh well with the amount and type of content I was looking to have on my site. I still wanted the feel that I thought the notes on corkboard conveys -- the stream of thought and notes taken during the creative process (regardless of what that creative process is). That led to an idea for a marker board style idea, but since I couldn't think of a way to make the screen look like a marker board and keep it consistent (primarily, I fail at creating realistic-looking metal for a frame, not to mention that I'm not really enough of an artist to make a realistic-looking whiteboard, since it's not actually completely white). While trying to find a way to do it, I came across a tutorial on how to make a realistic chalkboard image and was inspired. Between it and an article I found on how to make sketch-like images (after failing to find adequate icons for what I wanted on my site), I had an idea I could run with.</p><h3>Background</h3><p>I'm not a big fan of using a large amount of images in site design. Images and image-based designs increase download times and have a tendency to break on very large or very small screens. When I'm creating a site for an audience that could view it on pretty much any extreme, I want it to be flexible enough that it still looks good even on those extremes. What resulted was a fun new CSS3 attribute: "background-size."</p><p>I think the idea behind "background-size" was the CSS trick of encasing an image (using the &lt;img&gt; tag) in a container, then setting the image to a percentage size of the container and the container a flexible-sized (percent or "em") measurement. Doing this trick automatically resizes the image based on the size of the container, which is in turn determined by the size of the screen. "Background-size" does essentially the same thing, except the image is the container's background. This allows the image to stretch or collapse to fit the container. It's still not a completed CSS3 spec, so I think there could be some improvements to implementation, but it's actually quite handy. As an added bonus, it's already supported by everything except Internet Explorer. IE is somewhat easily fixed by using a tiling background, instead. Unfortunately, it's not as elegant as the CSS3 attribute, but until IE9 becomes the dominent version of Internet Explorer, or unless I find out about some IE proprietary filter, it's what I'm stuck with.</p><p>Another fun point about the background is that it's actually composed of two different images, and a background color. The main background, which looks like a well-used chalkboard, complete with "gunge" from years of use, is actually a code-set background color with a semi-transparent "grunge" layer. Then, the not-fully-erased markings are layered on top, inside of a different element.</p><h3>Typography</h3><p>I absolutely love web fonts, and, by extension, services such as <a title="TypeKit - Legal Web Fonts" href="http://typekit.com/fonts">TypeKit</a>. It's liberating to be able to complete the look of a theme without having to resort to image-replaced text. Somehow, I don't think Georgia, Times, or Arial would quite work to complete the look of chalk on a chalkboard Granted, I didn't use it for the body text, but I figured it'd be a good idea to refrain from doing so for the sake of my eyes and those of anyone who comes to visit.</p><h3>Icons</h3><p>You might notice a handful of icons around the site. Those are ones that I created specifically to go with this theme and for my needs, since I couldn't find a set that I liked that would go with the rest of the look and had the icons I needed (specifically, file type icons that diferentiated between OpenDocument Format (.odt) and Microsoft Word Format (.doc). Some time with Inkscape and some references for the icons I was looking for, and voila! A custom icon set!</p><p>I plan on refining the set and added more icons. Once I complete the set (with things I don't use, such as Facebook and Bebo), I plan on releasing it for download. If I'm lucky, it'll make it into <a title="A gold mine for just about anything a web creative could want" href="http://www.smashingmagazine.com/">Smashing Magazine</a>, which would probably get me far more traffic than I could dream of otherwise (hey, I <em>can</em> dream, can't I?).</p><h2>Under the Hood</h2><p>To make updating easier, and to easily integrate a professional blog into it, the site is powered by the wonderful CMS, <a title="I love SilverStripe!" href="http://www.silverstripe.org">SilverStripe</a>. In addition to the core, it uses the blog, document object module, and SWFUpload modules, and runs a custom theme that I built. While most of the site is just the basic page type, styled, the portfolio page is actually a custom page type (and technically, the Home Page is custom, too, but there's not much to its customization) that's based on SilverStripe's documentation tutorial for creating a custom page type. Once I build the contact form, it will be its own page type. jQuery will also power slideshow/image gallery combinations on the portfolio page.</p><p>I've also once again used CSS3 techniques for various aspects of the site. The big use is actually in the main and navigation backgrounds, which uses the "background-size" attribute. As an accent, the text also has drop shadowing applied to it, to make it "pop" more.</p><h2>Lessons Learned</h2><p>I haven't yet done anything special with the website itself, so my work with SilverStripe was nothing new and things I had already done before. However, that's not to say that I haven't learned things from working on the project.</p><h3>Agile Development in Practice</h3><p>I've heard a lot about agile development practices and how it's the latest (kind of) and greatest way of creating an application these days. The problem is, none of the people I've worked with are actually using agile development. Instead of rolling out small, incremental changes once every couple of weeks, they roll a number of changes into large version releases. Even in college (and in a college that prides itself on keeping updated, no less), it was the waterfall method that was taught.</p><p>In the interest of getting the new design up quickly, I ended up working in an agile style, which was quite refreshing. As I said, I was originally taught the waterfall method, which meant knowing exactly everything the final product will do long before a code file is ever opened. I remember my senior project following that method. We had so much paperwork that we could literally hand what we had over to someone who was never involved in the planning phase and after looking through the plans would know exactly what was needed for every aspect of the website. We had flow charts, use cases, pseudocode, the works. We even had test plans for aspects of the program that weren't even close to being implemented.</p><p>Now, that's not to say that an agile development environment doesn't have any of these things, or doesn't go through the development lifecycle, but the software development life cycle (SDLC) is done in smaller portions and multiple times throughout an agile project, for each increment of the development. While I'm not formalizing and writing out flowcharts or use cases for each portion, I do go over them in my head (since I'm the only one that would ever work on this site in the foreseeable future) and do testing before launching each piece. The result, I've found, is a more satisfying feeling, because each piece is its own entity. Once it's finished, it can be integrated into the existing system and implemented right away, instead of it just being perceived as another cog in a giant machine that feels like it will never be finished.</p><h3>Fun with Inkscape and the GIMP</h3><p>Because I couldn't find icons that fit with the look I was going for, I had to make my own. Enter <a title="Vector editing, yay!" href="[sitetree_link id=]">Inkscape</a>, the open source alternative to Illustrator. With the help of a tutorial to get me started (I'm more of a <a title="Better than Photoshop, in my opinion" href="http://www.gimp.org/">GIMP</a> person when it comes to graphics, so I wasn't hugely familiar with Inkscape), and some playing with its options, I soon had some icons for the site. The only issue I had was that Inkscape's native save format is .svg, and its support for .png doesn't seem to allow for trimming and the use of transparencies, at least that I know of. So, off to the GIMP (the Gnu Image Manipulation Program) for trimming, resizing, and converting to .png images with transparencies. I liked it so much, I even did the same thing to make the horizontal rules for the site.</p><h2>Wrap-Up</h2><p>All in all, I'm proud of how this project turned out. I think the chalkboard look is creative and along the lines of what I was going for. I got to play with more CSS3 stuff, TypeKit, and SilverStripe, all of which I thoroughly enjoy.</p></div>
+
+]]></content>
+  </entry>
+  
+</feed>

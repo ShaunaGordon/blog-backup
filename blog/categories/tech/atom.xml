@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tech | Shauna Gordon]]></title>
+  <link href="http://ShaunaGordon.com/blog/categories/tech/atom.xml" rel="self"/>
+  <link href="http://ShaunaGordon.com/"/>
+  <updated>2014-10-31T02:35:10+00:00</updated>
+  <id>http://ShaunaGordon.com/</id>
+  <author>
+    <name><![CDATA[Shauna Gordon]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[An Open Letter To Recruiters]]></title>
+    <link href="http://ShaunaGordon.com/blog/2014/10/15/dear-recruiters/"/>
+    <updated>2014-10-15T23:20:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2014/10/15/dear-recruiters</id>
+    <content type="html"><![CDATA[<p>Dear Third Party Recruiters,</p>
+
+<p>Due to the high volume of contact requests I’ve received, I have decided to write this open letter in order to improve the quality of my network.</p>
+
+<p>The Greater Columbus Area is home to a very large number of third party recruiting companies. This means <strong>you have a lot of competition</strong>. Competition should mean improved quality. Unfortunately, what I generally see is rather disappointing.</p>
+
+<p>We tech folks are generally a merit-based people. We’ll respect you if we have reason to do so. You can earn that respect by demonstrating that you respect us and what we do (and no, saying that you do doesn’t cut it; show, don’t tell). Here are some ways to do that.</p>
+
+<!-- more -->
+
+
+<h2>Have some fundamental understanding of the technology</h2>
+
+<p>Or, <em>don&rsquo;t play buzzword Bingo.</em></p>
+
+<p>I don’t expect you to have been a developer, but I do expect basic, high-level knowledge, such as the fact that <strong>Java and JavaScript are two very different things.</strong> How can you expect to get proper, let alone quality, matches for the companies you’re recruiting for if you can’t even get the technology right?</p>
+
+<h2>Pay attention to the last time I used a technology, and the ones I use now</h2>
+
+<p>Or, <em>do some some homework.</em></p>
+
+<p>I know there’s a certain amount of crossover when it comes to technologies, but there’s also a sort of expiration date, especially at the Senior Developer level. <strong>I have not touched Java since 2007.</strong> Odds are, I am <em>not</em> a good fit for that great Android developer position you’re looking to fill, nor will I be interested in it, nor am I likely to have anyone in my circles that use it. For the record, my network primarily covers the open source languages (PHP, Ruby, Python) and, to a lesser extent, the .Net languages. However, I won’t be forwarding your leads to them if you haven’t taken the time to build some rapport with me.</p>
+
+<h2>Pay attention to <em>all</em> of the technologies I use</h2>
+
+<p>My time at a design agency has resulted in a number of “front end!” development position leads, since a large portion of my job was HTML and CSS. Now, while a front end development position <em>may</em> not get immediately trashed, you will probably find a far better match with me for a <em>full stack</em> position.</p>
+
+<p>I’ll be among the first to admit &mdash; software is a <em>huge</em> industry (really, there isn’t a word in the English language that adequately describes just how mind-boggling huge an industry it is). Front end web development is, on its own, enormous. If a company is looking for a dedicated front-end person, odds are, I don’t know half of what they’re looking for, at least not to the level that would best serve them. Now, while I’d love to learn it and would have no qualms doing so (hell, it’s how I’ve learned most of the technologies I use at this moment), odds are very good that I’m not as great a match for the company as you might think. There’s probably someone out there better suited to that particular position.</p>
+
+<p>Don’t get me wrong &mdash; if the company doesn’t mind a little more time to pick up the new technology <em>and</em> the ins and outs of the new (to me) company, then by all means. However, most companies, especially those going through the heavy, active recruiting that you get paid to do, generally prefer someone who can “hit the ground running.” Angular/Backbone/Ember/Knockout may be a JavaScript framework, but it’s enough of its own beast that just knowing JavaScript probably isn’t enough for a “hit the ground running” position.</p>
+
+<p>Instead, look at what I <em>do</em> use, and look at <em>all</em> of it, especially in recent gigs. Odds are very good that if you have a position that needs a little bit of everything, then I <em>am</em> a good fit for it. Framework matches? Even better!</p>
+
+<h2>Write better introductions</h2>
+
+<p>I literally received an email from a third party recruiter that started like this:</p>
+
+<blockquote>I was just cruising around the web, and I stumbled upon what you've been up to on the software engineering front.</blockquote>
+
+
+<p>Seriously? Now, I don’t expect some kind of formal thesis with the formal greetings we all learned in school, but come on. Do you really expect me to believe that you, a person whose entire job is to seek out people like me, was “cruising around the web” and <em>happened</em> to stumble on my website/Twitter/LinkedIn profile? Really, it sounds like a bad pickup line.</p>
+
+<p>Granted, I’m sure there is a certain amount of meandering going on, following leads and connections, friends-of-friends and blog posts by related authors. It’s not like I’ve made myself scarce in the online world. If you really just happened upon my information, then cool, I’ve done my job at least to some extent.</p>
+
+<p>But please don’t fluff it up like the above quote. Something like “I found your LinkedIn profile” or “saw one of your blog posts mentioned in a Tweet on my feed,” or whatever other more straightforward and non-sickening way of telling me where you found my information is much less likely to get your email immediately deleted. You also get some brownie points for being more specific with how you’ve found me.</p>
+
+<h2>For that matter, introduce yourself</h2>
+
+<p>If you send me a LinkedIn invite, and all it reads is the &ldquo;Join my LinkedIn network&rdquo; canned pre-fill text, then your invite will get trashed. I don&rsquo;t collect contacts, especially third party recruiters.</p>
+
+<h2>Be more straightforward in general</h2>
+
+<p>I hate social games. I value straightforwardness and despise things like this:</p>
+
+<blockquote> I came across your profile on LinkedIn while researching Developer professionals. Your background/experience caught my eye so I’m sending you a quick note to see if you'd be able to point me in the right direction. 
+ 
+Our client is looking for a Web Developer in the Columbus, OH area! Do you know of anyone who may be interested?</blockquote>
+
+
+<p>Especially when it’s followed by this, when I ask for more information:</p>
+
+<blockquote>I wanted to see if you were still interested in this opportunity! We sat down with the client this week and were able to find out a ton more details of exactly what they are looking for, I would love to talk some details with you!</blockquote>
+
+
+<p>Now, I understand that, as a third party, you can’t (or are hesitant to) disclose things like the company name (though doing so would earn you some brownie points; otherwise, it conveys the message that you don’t trust me, and that’s not a good start), but if you don’t want your email to end up in the trash bin, then give me at least some information about the job itself &mdash; things like what technologies, number of years experience. You know, the usual.</p>
+
+<p>This also highlights another issue.</p>
+
+<h2>Don’t insist on only talking to me via phone</h2>
+
+<p>First off, if you’re not willing to put something in writing, then that itself raises a red flag and makes me more likely to dismiss you.</p>
+
+<p>Second, phone calls &mdash; particularly unexpected/unsolicited ones &mdash; are intrinsically intrusive. Additionally, developers typically run on what can be described as <a href="http://www.paulgraham.com/makersschedule.html">the maker’s schedule</a>, and I’m not exception. By calling me, you’ve diverted my attention from my work, broken my concentration. <em>The phone call itself does this, even if I don’t answer.</em> At the very least, your call has just cost me <a href="http://blog.ninlabs.com/2013/01/programmer-interrupted/">roughly 10-15 minutes</a> in productivity. Since time is money, you then owe me a fancy coffee at a hipster coffee shop, just for the interruption. If I actually answer and talk to you, you might as well buy me lunch.</p>
+
+<p>In fact, if you’re really interested in <em>me</em> and talking to me, then do that &mdash; buy me lunch. We can organize a lunch meeting via email (when I can respond at a time that suits me), and chat about things then. And keep in mind, it’s not about the free food aspect. It’s about respecting and valuing my time.</p>
+
+<h2>Communicate with your other branches and don’t spam and harass me</h2>
+
+<p>A one point earlier this year, I received <strong>5 emails and 3 phone calls from different people at different branches of the same recruiting company in the span of 2 weeks.</strong> Two weeks! Even worse? Nearly half of those came <em>after I asked them to remove me from their system</em> (for the third time, no less).</p>
+
+<p><em>That</em> will get you reported to the Better Business Bureau, and you <em>will</em> be made known to my network as someone to not work with. Developers talk. Our industry may be huge, but our community is quite small. I can’t tell you the number of people I’ve found that I’ve crossed paths with in one way or another or found that my friends have shared connections beyond casual “friend” or “connection” gathering on social media networks. Earning yourself a place on my blacklist will very likely earn yourself a place on the blacklist of a few dozen other developers (conversely &mdash; earning a place of respect with me will make it more likely to get referrals from me).</p>
+
+<p>I understand that there aren’t really any convenient times during which you can call, but that makes it even <em>more</em> important to not spam or harass me.</p>
+
+<h2>Don’t send me leads in other cities</h2>
+
+<p>Unless I’ve indicated a willingness to relocate (even better, a willingness to relocate to <em>that</em> city), or the company genuinely supports remote working (not just kind of puts up with it), I’m very, very likely not interested in it. Additionally, even if I am interested or would consider it, absence of a relocation package will pretty much guarantee I’ll ignore it. Selling a house and moving a family is a pain in the ass, so there’s a <em>lot</em> of inertia there.</p>
+
+<h1>What I want in a job</h1>
+
+<p>Now that you’ve read this far, let’s look at the things that I want in a job. I’m in a good position right now and am not specifically looking to change. Therefore, while I always keep my ear to the ground, I can afford to be ultra-picky. Odds are very, very good, then, that I will ignore any lead that doesn’t match up with the following things.</p>
+
+<p>These are not the demands of an entitled young worker. These are things that I’ve found work best for me and allow me to be a better employee to an employer. These are also things that I’ve found that say a lot about the quality of the environment. In other words, the more of these qualities that a company fulfills, the more likely I’ll be a good match for the company (not just the position itself).</p>
+
+<h2>Only agencies that truly value their developers</h2>
+
+<p>This really applies to all companies, but from the experiences I’ve had at the ones I worked at suggest that agencies are some of the worst offenders. When the people in an environment that’s proven toxic for me repeatedly tell me that that company is better than the other (big player) agencies that they’ve worked at, that sends a pretty clear message that I want nothing to do with the entire lot.</p>
+
+<p>I’ve worked in agency environments, and they were all a big fail to me. The worst fail was with a company that touted great culture, but it was lip service and superficial things &mdash; the pool table, ping pong table, and video games that I’d seen used a collective less than half a dozen times in the year and a half I was there; the happy hours and parties that were as much a disturbance to us as good things. The things that really matter to good culture &mdash; not overloading us with work, providing us with quiet environments, and the ability of project and account managers to reign in a client and say “no” once in a while (especially when the client expects it without paying extra or adjusting the deadline) &mdash; are what I’m interested in. Without these things, I crash and burn, and such an environment is a toxic one for me.</p>
+
+<h3>Brownie points: encourage self-direction of projects and full project ownership</h3>
+
+<p>I’m a big fan of Zack Holman’s articles on some of GitHub’s ideals. In this case, it’s <a href="http://zachholman.com/posts/how-github-works-creativity/">his “Creativity Means Self-Direction” section of this one</a>. This isn’t a deal-breaking ideal, but the company that does this would be worth its weight in gold, particularly on top of fulfilling the other ideals. I would love to be able to work on the project(s) that I choose to work on, and be able to take full ownership and have a certain amount of control/authority over that project, and tinker it to improve it as I see fit.</p>
+
+<h2>Remote work friendly</h2>
+
+<p>I have found that a company’s view on people working remotely has been a fairly accurate barometer for other environmental mindsets.</p>
+
+<p>My ideal is the option to work full time remotely. <strong>My line of work does not require physical presence in a specific location.</strong> Many of the best teams in my industry are comprised of people who have never met in person. It most certainly can be done successfully, given the right infrastructure.</p>
+
+<p>I may consider a position that allows it on a regular part time basis. <em>This does not mean “you can work from home if you’re snowed in…”</em> but rather, I have the option to, say, work from home on Wednesdays, because those are my most productive days, and I can encourage that productivity by working in an environment that I’ve set up to be ideal for me and don’t have to worry about people walking up to me and interrupting me while I’m in the zone.</p>
+
+<h2>Results-only work environment</h2>
+
+<p>If you don’t know what this is, <a href="http://www.businessweek.com/stories/2006-12-10/smashing-the-clock">here’s some required reading for you</a>, and when you’re done with that <a href="http://www.amazon.com/gp/product/1591842921/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1591842921&amp;linkCode=as2&amp;tag=graywolfweb-20&amp;linkId=PBMFRAJ3BFUSYUQ6">pick up <em>Why Work Sucks And How To Fix It</em> and read it</a> . I’ll wait.</p>
+
+<p>Done with your homework? Good, because this one’s come to be a deal-breaker for me.</p>
+
+<p>In the US, developers are nearly always exempt salary (thank you “Fair” Labor Standards Act…), and most employers are too hung up on number of hours worked. This is <em>a very bad combination,</em> because it is very easily abused to get what amounts to free labor. <a href="http://zachholman.com/posts/how-github-works-hours/">Developers are creative people, with peaks and troughs of productivity.</a> It does a disservice to both us and our employers if we’re not able to honor those troughs by doing something else in our lives that can break us out of these non-productive phases, especially during slow times in the company. Requiring me to work a particular number of hours a day or week, even when there’s no or not much work to do, is not “hour flexibility,” nor is it “work life balance” (especially if I’m required to use accumulated paid time off of any sort if I don’t work those hours). If I’m salaried, you’re paying me for the value I bring to the company, not for my time. If you’re going to hold me to a time clock, pay me proper overtime pay. I’m a professional level employee with an advanced set of skills, not a slave.</p>
+
+<p>In short, <strong>I am much more willing to work overtime when needed if I know that I don’t have to work a “regular” number of hours during the next slow period.</strong></p>
+
+<p>Additionally, a ROWE discourages office politics. I <em>despise</em> office politics and don’t do well with them (for reasons I’ve explained elsewhere on my blog). So, a ROWE is more likely to be a workplace that’s friendlier to my personality, making it that much more likely that my relationship with the company will be a long and happy one.</p>
+
+<h2>Brownie points: use modern tools and technologies</h2>
+
+<p>This isn’t a deal-breaking thing, but it is an ideal. Simply put, I’m able to do more and be more productive when I’m able to work with modern tools, instead of trying to fight with a legacy system that doesn’t follow any standards (unless I’m modernizing said legacy system).</p>
+
+<h1>Phew! You made it!</h1>
+
+<p>Read all the way through that and still have something for me? Awesome! Send it my way, being mindful of the things we talked about here.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vagrant - Initial Thoughts]]></title>
+    <link href="http://ShaunaGordon.com/blog/2013/11/17/vagrant-initial-thoughts/"/>
+    <updated>2013-11-17T01:14:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2013/11/17/vagrant-initial-thoughts</id>
+    <content type="html"><![CDATA[<p>So, I finally did it. I finally started playing with <a href="http://www.vagrantup.com/">Vagrant</a>. I have to say, I quite like it.</p>
+
+<p>At the moment, I just have a generic Ubuntu box that I downloaded from <a href="http://www.vagrantbox.es/">Vagrentboxes</a> and then used a script to download the dependencies needed to run Octopress and my blog. Add a little port-forwarding magic, and I no longer have to deal with RVM, Ruby versions, and what-have-you on my MacBook Pro (this is a very good thing, as I&rsquo;ve found OSX to be surprisingly hostile to developers in its attempt to be &ldquo;helpful&rdquo;). This is great, but quite cumbersome, because it involves updating apt-get, installing a bunch of things that have a laundry list of dependencies out of apt-get, then installing the Ruby gems needed, <em>then</em>, finally, running <code>rake preview</code>. Once it&rsquo;s up and running, it&rsquo;s great, but that process takes somewhere between 5 and 10 minutes.</p>
+
+<p>Come on now, we can do better than that.</p>
+
+<p>So, now, my next project with Vagrant will be to create a box that already has the necessary prerequisites for Octopress. Then, at some point, I think I&rsquo;ll make one for other development projects, too. I suspect it will save me &ndash; and some of my coworkers &ndash; quite a bit of headache when it comes to dealing with different development environments (I know at least one coworker who has to support legacy 5.3 applications, and help with our new Laravel apps that require 5.4+ due to our heavy usage of array literal notation).</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[box-sizing: border-box and Changes in How We Use the Box Model]]></title>
+    <link href="http://ShaunaGordon.com/blog/2013/02/19/box-sizing-border-box-and-changes-in-how-we-use-the-box-model/"/>
+    <updated>2013-02-19T00:00:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2013/02/19/box-sizing-border-box-and-changes-in-how-we-use-the-box-model</id>
+    <content type="html"><![CDATA[<p>Back in the days when Internet Explorer 6 reigned supreme, when Firefox was just getting its foothold and taking shares from IE, and Chrome was barely a Googler&rsquo;s pet project, the browsers followed different box models.</p>
+
+<p>Firefox (as well as the then little-known browsers Opera and Safari) followed the W3C standard box model, what is now known as &ldquo;content-box&rdquo;. Internet Explorer, on the other hand, followed its own box model, what we now call &ldquo;border-box&rdquo;. As Firefox began to rise and threatened IE&rsquo;s market share, Web developers were singing the praises of the content-box style box model (which was one of the many W3C standards that IE ignored, and Firefox implemented), to the point that when Microsoft finally released Internet Explorer 7, it implemented the standard box model.</p>
+
+<!-- more -->
+
+
+<h2>Fast forward seven years</h2>
+
+<p>Now, it&rsquo;s 2013, not only are more browsers on the market, but the market share has tipped dramatically away from Internet Explorer, and had spread out among several browsers. Competition has forced IE to be more standards compliant (IE10 even has text shadow support!). And, to top it all off, a CSS technique is on the rise: <code>box-sizing: border-box</code>. Yes, the very same method that IE6 used.</p>
+
+<h3>What changed?</h3>
+
+<p>I&rsquo;m only speculating, but I think it&rsquo;s a fundamental shift in how developers write both HTML and CSS &mdash; and perhaps a refinement of what they feel the standards should be &mdash; based on what works and what makes sense in practice. There are two main paradigm &ldquo;camps&rdquo; regarding how HTML and CSS should be architected and written.</p>
+
+<p>The first is the &ldquo;positional&rdquo; camp. The idea behind this one is that an element&rsquo;s style should be dictated by it&rsquo;s position in the document object model, or DOM. So, for example, all <code>&lt;li&gt;</code> elements within any <code>&lt;nav&gt;</code> element would have <code>display: inline-block</code> applied to them (making a horizontal navigation list), but if you moved that same set if <code>&lt;li&gt;</code> elements into an <code>&lt;article&gt;</code> element, it would become a vertical list.</p>
+
+<p>The other is the &ldquo;object oriented&rdquo; camp. The idea here is that the <code>&lt;ul&gt;</code> (unordered list) which is the parent of the above-mentioned <code>&lt;li&gt;</code> elements, would have one or more classes on them, such as &ldquo;horizontal&rdquo; or &ldquo;main-nav&rdquo;. This class, or set of classes, would dictate how the block of elements would look, regardless of where the block was placed. To use the same example, all <code>&lt;li&gt;</code> elements within the <code>&lt;ul class="main-nav"&gt;</code> block woud have <code>display: inline-block</code> on them. This styling would stay the same regardless of whether the block was inside a <code>&lt;nav&gt;</code> or <code>&lt;article&gt;</code> element.</p>
+
+<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+<p>One of the rules of object oriented design is that an object shouldn&rsquo;t care about any objects outside of itself. Each object handles itself and the initial creation of its children (the children then handle themselves). This isn&rsquo;t as rigid in CSS as it is in real programming languages, due to how CSS and document flow manipulation works, but the logic is still sound and works for the most part.</p>
+
+<p>However, <code>box-sizing: content-box</code> (the default box-sizing for modern browsers) breaks this rule, by, in a sense, making objects lie about their true size.</p>
+
+<p>For example, let&rsquo;s say I have a three-column layout, and I want each column to be equal width. Okay, that&rsquo;s easy, we do something like this:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Our 3-Column Layout <a href="http://jsfiddle.net/gordondev/yzfH2/">http://jsfiddle.net/gordondev/yzfH2/</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;three-column&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        Some content
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;three-column&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        Some content
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;three-column&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        Some content
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Our 3-Column Layout&rsquo;s CSS <a href="http://jsfiddle.net/gordondev/yzfH2/">http://jsfiddle.net/gordondev/yzfH2/</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.wrapper</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="m">960px</span><span class="p">;</span> <span class="c">/* Some arbitrary bounding. 960px is usually the width of fixed-width layouts. */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.three-column</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="m">33</span><span class="o">%</span><span class="p">;</span> <span class="c">/* 100%/3 = ~33% */</span>
+</span><span class='line'><span class="k">height</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span> <span class="c">/* Stick in an arbitrary height for display purposes. */</span>
+</span><span class='line'><span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+</span><span class='line'><span class="k">background</span><span class="o">:</span> <span class="m">#f00</span><span class="p">;</span> <span class="c">/* Red, again for display purposes */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.three-column</span><span class="nd">:first-child</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">background</span><span class="o">:</span> <span class="m">#0f0</span><span class="p">;</span> <span class="c">/* Green, to show the column differences */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.three-column</span><span class="nd">:last-child</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">background</span><span class="o">:</span> <span class="m">#00f</span><span class="p">;</span> <span class="c">/* Blue, to show the column differences */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>This gives us a nice little three-column layout:</p>
+
+<p><iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/gordondev/yzfH2/embedded/result/light/"></iframe></p>
+
+<p>This is great! But we&rsquo;d like some breathing room between the ends of the text and the edges of their blocks, like so:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Let&rsquo;s Add Padding <a href="http://jsfiddle.net/gordondev/yzfH2/1">http://jsfiddle.net/gordondev/yzfH2/1</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.three-column</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;/*</span> <span class="n">Existing</span> <span class="n">code</span> <span class="o">*/</span>
+</span><span class='line'><span class="k">padding</span><span class="o">:</span> <span class="m">0</span> <span class="m">5px</span><span class="p">;</span> <span class="c">/* 0 top and bottom padding, 5px left and right padding */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Let&rsquo;s take a look now!</p>
+
+<p><iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/gordondev/yzfH2/1/embedded/result/light/"></iframe></p>
+
+<p>Uh oh! That&rsquo;s not what we want. What happened? The boxes should only be 33% of the width!</p>
+
+<p>You&rsquo;d think that, wouldn&rsquo;t you? Remember what I said earlier about <code>box-sizing: content-box</code> making liars out of our elements? Well, this is it. You see, &ldquo;33%&rdquo; is only the width of the <em>content</em>. That doesn&rsquo;t include margins, padding, or borders.</p>
+
+<p>For most people (particularly the OOCSS-leaning people we mentioned earlier), this <em>really</em> doesn&rsquo;t make sense for padding. The purpose of padding is to add space from the outer edge, or border, of the container, in to the content. Basically the same way the margin lines on a piece of notebook paper work. Logically, this should reduce the space allotted to the content (likewise, the CSS margin would be roughly equivalent to the space between pages in an opened notebook &ndash; they exist outside the bounds of the edge of the container). Why, then, is the default behavior to make the box <em>bigger</em> when either margin or padding is added?</p>
+
+<p>Now, in the days of fixed-width layouts, this meant recalculating the width of the internal boxes, so that they fit within their parent. This is one of the core reasons why 960px was used as the go-to content width of fixed layouts &ndash; 960 divides into both 2 and 3 evenly (1, 2, and 3 columns being the most common layouts). So, in the days of the fixed-width layout, we&rsquo;d simply change the width of our boxes to accommodate things like margins, padding, and borders:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Now, Fix the Damn Layout <a href="http://jsfiddle.net/gordondev/yzfH2/4">http://jsfiddle.net/gordondev/yzfH2/4</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.three-column</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;/*</span> <span class="k">width</span><span class="o">:</span> <span class="m">33</span><span class="o">%</span><span class="p">;</span> <span class="o">*/</span>
+</span><span class='line'><span class="k">width</span><span class="o">:</span> <span class="m">310px</span><span class="p">;</span> <span class="c">/* 960px/3 = 320px, 320px-15px (5px left padding + 5px right padding) = 310px */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And look! Our layout works again!</p>
+
+<p><iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/gordondev/yzfH2/4/embedded/result/light/"></iframe></p>
+
+<p>But what happens when the width of the container is proportional, and scales based on the browser size, as with fluid layouts? Well, our layout breaks again, because it&rsquo;s dependent on a parent width of 960px. Once that parent width drops below 960px, our columns wrap again. Now, in some instances, this may be what we want (when a viewport gets too narrow, having columns drop underneath one another can help keep them wide enough to be readable), but we generally want some kind of give before that happens.</p>
+
+<p>Okay, so we want the columns to scale with their parent (at least to certain breakpoints, but that&rsquo;s a discussion for a different time), <em>and</em> we want the fixed-sized padding, is there a way to do that? Well, before <code>box-sizing: border-box</code> gained support, there actually was, but it wasn&rsquo;t all that pretty, especially when dealing with pixel-perfectionists. You just used percentages for everything:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Back to fluid? <a href="http://jsfiddle.net/gordondev/yzfH2/3">http://jsfiddle.net/gordondev/yzfH2/3</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.three-column</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="m">32</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'><span class="k">padding</span><span class="o">:</span> <span class="m">0</span> <span class="o">.</span><span class="m">5</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/gordondev/yzfH2/3/embedded/result/light/"></iframe></p>
+
+<p>This works great&hellip;except for the fact that the padding also expands or contracts. If that&rsquo;s what you want, then great! If you&rsquo;re like me, and have to deal with people who expect those padding to stay the same, then you&rsquo;re <abbr title="Shit out of Luck">SoL</abbr> (or, at least, you used to be).</p>
+
+<p>It&rsquo;s also possible to put the margins or padding on the child elements, but that would either require an extra &ldquo;wrapper&rdquo; element, or some not-so-ideal <code>.three-column *</code> type selectors. Both of these options work, but are ugly and not very elegant. Plus, you&rsquo;d have to do that for everything that is affected by this issue, instead of just making it do something sane to begin with.</p>
+
+<h2>This sounds like a job for&hellip;.!</h2>
+
+<p>With <code>box-sizing: border-box</code>, you can now use the percentage widths, with fixed-sized padding, to get this:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Box-sizing to the rescue! <a href="http://jsfiddle.net/gordondev/yzfH2/5">http://jsfiddle.net/gordondev/yzfH2/5</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">*</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span> <span class="c">/* Firefox still uses the prefixed version */</span>
+</span><span class='line'><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.three-column</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="m">33</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'><span class="k">padding</span><span class="o">:</span> <span class="m">0</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/gordondev/yzfH2/5/embedded/result/light/"></iframe></p>
+
+<p>Yay! And look, this actually makes sense (to most people)! If I tell the element that I want it to be 33% of its parent, that means I want the <em>everything</em> within the element&rsquo;s borders to be 33% of its parent.</p>
+
+<h2>I said all that to say this&hellip;</h2>
+
+<p>As you can see, with the standard <code>box-sizing: content-box</code>, making flexibile layouts is a nightmare, especially when trying to keep things lean for our mobile-device-using friends. The shift toward responsive and flexible layouts has necessitated a need for stricter adherence to object-oriented types of rules, for the sake of our sanity.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Yes, Yes, I Know]]></title>
+    <link href="http://ShaunaGordon.com/blog/2013/01/15/yes/"/>
+    <updated>2013-01-15T21:29:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2013/01/15/yes</id>
+    <content type="html"><![CDATA[<p>I know, I need to put a new theme on this thing. It&rsquo;s funny how you start seeing something everywhere once you find out about it for the first time.</p>
+
+<p>I&rsquo;m not totally sure when, but I fully plan on building a new theme. I&rsquo;d like to play around with responsive design, so this should be interesting.</p>
+
+<p>I&rsquo;ll also be looking into a sort of &ldquo;tag cloud&rdquo; for the sidebar, and a way to list the &ldquo;tags&rdquo; (or, as Octopress calls them, &ldquo;categories&rdquo;). I find it hard to believe that you can put categories into your posts and not be able to make use of them.</p>
+
+<p>Oh, and your tip for the day &ndash; I never remember to use &ldquo;rake&rdquo; for doing Octopress tasks. I always want to run &ldquo;octopress [task]&rdquo;, so I added to my ~/.bashrc the line:</p>
+
+<p><code>sh
+alias octopress="rake"
+</code></p>
+
+<p>To use it right away, just run <code>source ~/.bashrc</code>. :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Use Pidgin and Google Apps to Chat]]></title>
+    <link href="http://ShaunaGordon.com/blog/2012/11/01/use-pidgin-and-google-apps-to-chat/"/>
+    <updated>2012-11-01T00:00:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2012/11/01/use-pidgin-and-google-apps-to-chat</id>
+    <content type="html"><![CDATA[<div class='post'>
+<p>Who doesn't use instant messenger of some form these days? Those of us from the days when there were as many chat programs as people probably have half a dozen accounts or more, or at least did at one point (who didn't have ICQ, MSN, AIM, <i>and</i> Yahoo?). Thank goodness for unifying applications like Pidgin/Adium, Trillian, and others.</p><p>Now that some of us old chatters have grown up and created businesses (or at least business names) of our own, we may need to add our Google Apps accounts to the mix. This is a little trickier than just adding a Gmail, or other established provider, account, but thankfully, it's not that difficult. I found, though, that start-to-finish instructions for getting set up on Pidgin were lacking, so we'll cover them here. These instructions will work for Pidgin, and should work for Adium (the Mac port of Pidgin), though one may find the settings in slightly different places, due to convention differences across the platforms. The basic information should also work for other clients, such as Tillian, though, obviously, you're on your own for finding were to enter everything.</p><!-- more --><h2>1. Server Settings</h2><p>Before you can even do anything in Pidgin, you need to first set up your domain to use the XMPP chat protocol and Google as the provider, and make sure that external chat is turned on in your Google Apps account. You can do this by going into the DNS management section of your web host.</p><p><b>2 things of note:</b> First, where and how you update your DNS information will depend entirely on your host. Since every host uses a different interface, detailing every single one is beyond the scope of this article. If you don't know how to edit your DNS listings, then you'll need to consult your host's documentation or help system.</p><p>Second, many hosting companies offer a wizard for setting up a domain to work with Google Apps. These scripts are great for getting email and whatnot associated, but they unfortunately do not include setting up for chat. You will need to set this up manually.</p><h3>Turn on Google Chat</h3><p>This should be enabled by default, but if you're not sure, or you turned it off previously, sign in to your Google Apps account with an administrative account and go into the domain management section.</p><p>On your dashboard, there should be a "Your Google apps" widget. If "Chat" does not show up in the list, then click on the "Enable more services link" and find the "Chat" service and make sure it's turned on.</p><h3>Edit Your SRV Entries</h3><p>Google has a <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=34143" target="_blank">nice little documentation page</a> that includes the information needed to fill in for your SRV entries. Specifically, you want to keep note of the data itself:</p><p>_xmpp-server._tcp.<b>yourdomain.com</b>. IN   SRV     5 0 5269 xmpp-server.l.google.com.<br />_xmpp-server._tcp.<b>yourdomain.com</b>. IN   SRV     20 0 5269 alt1.xmpp-server.l.google.com.<br />_xmpp-server._tcp.<b>yourdomain.com</b>. IN   SRV     20 0 5269 alt2.xmpp-server.l.google.com.<br />_xmpp-server._tcp.<b>yourdomain.com</b>. IN   SRV     20 0 5269 alt3.xmpp-server.l.google.com.<br />_xmpp-server._tcp.<b>yourdomain.com</b>. IN   SRV     20 0 5269 alt4.xmpp-server.l.google.com.</p><p>When filling out your SRV entries, replace <b>yourdomain.com</b> with the domain you want to use to connect to.</p><h2>2. Pidgin Settings</h2><p>This is where things aren't quite so straightforward. As you're probably aware, with your Gmail account (and other XMPP direct providers), you simply fill in the username and domain fields, and Pidgin happily picks up the rest of details. For your custom setup, though, there's a little more to fill in.</p><p>First, to add your account, select "XMPP" for the provider. Set the username and domain the same way you did with your Gmail account, with the username as the portion to the left of the @ symbol in your email, and the domain as the portion to the right of it.</p><p>Since you're piggybacking off of Google's servers, which have a different domain name, you need to fill in the <b>resource</b> field with <i>gmail.com/</i> (yes, include the slash).</p><p>After that, go over to the "Advanced" tab and fill in the following information:</p><p><b>Connect port:</b> 5222<br /><b>Connect server:</b> talk.google.com<br /><b>File transfer proxies:</b> proxy.jabber.org</p><p>(*Note:* I've found that Pidgin might insist on using proxy.eu.jabber.org, this doesn't seem to affect file transfers. I think the important part is that it's a jabber.org address.) </p><p>Click "Save" and you're done!</p><p>If Pidgin cannot connect, it may be due to the fact that it takes some time for DNS changes to propagate through the Internet. If you just added your SRV entries, you may need to wait a day for the changes to take full effect.</p></div>
+
+]]></content>
+  </entry>
+  
+</feed>

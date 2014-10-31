@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Create a 'Latest' Feed in SilverStripe with SimplePie - Shauna Gordon</title>
+  <meta name="author" content="Shauna Gordon">
+
+  
+  <meta name="description" content="(SilverStripe version 2.3. Version 2.4 has some changes that change what needs to be done to achieve this effect. Among the changes is an updated &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ShaunaGordon.com/blog/2010/03/24/create-latest-feed-in-silverstripe-with/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Shauna Gordon" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Bilbo|Junge|PT+Mono' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Shauna Gordon</a></h1>
+  
+    <h2>Code Is My Art</h2>
+  
+</hgroup>
+
+
+	  <nav role="navigation">  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ShaunaGordon.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+  
+  <li><a href="https://github.com/ShaunaGordon">Fork Me On Github!</a></li>
+  
+</ul>
+<ul class="main-navigation">
+	
+	<li><a href="/about">About Me</a></li>
+	
+	
+	<li><a href="/blog/categories/projects">
+		
+			Projects
+		
+	</a></li>
+	
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+ </ul>
+
+</nav>
+  </header>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Create a 'Latest' Feed in SilverStripe With SimplePie</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-24T00:00:00+00:00" pubdate data-updated="true">Mar 24<span>th</span>, 2010</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<p>(SilverStripe version 2.3. Version 2.4 has some changes that change what needs to be done to achieve this effect. Among the changes is an updated version of SimplePie.)</p><p>One of the things that my client (and I, for that matter) wanted on  their site was a way to show a snippet from the latest post from their  blog. Since they were already using an established, external blog (in  this case, hosted on Blogger), and we wanted to avoid creating an  internal one and importing everything, we decided to see if we could  find a way to pull in part of the latest post.  As it turns out, SilverStripe has a similar feature built into it.<!-- more --> There  are a few problems, though:</p><ol><li>The feature is only available, by default, as part of the &#8220;blog&#8221;  module. Since my client&#8217;s site was not a blog, that meant pulling some  code in and customizing it.</li><li>The default code will pull the entire blog. This means that we&#8217;ll  need to trim it down.</li><li>Even when trimming down the number of entries it pulls and shows,  it still shows the entire blog entry. So, we need to create a function  to trim the individual post. (As a bonus, though, we end up with a  function we could use for anything that requires trimming a block of  text.)</li></ol><p>This feature is an app called <a href="http://simplepie.org/">SimplePie</a>. Technically speaking,  the version SilverStripe installs with is outdated, but it still works  for our purposes. The only thing you need, then, is to make sure  syndication is turned on, and the address of the feed (the actual RSS  feed address, not the blog address).  <strong>Note:</strong> if you try to access the feed in your browser to get the  feed address and all you get is the bookmark dialog, without a feed  preview page, then make sure your browser is set to preview feeds. In  Firefox, this can be found in Preferences -&gt; Applications as &#8220;Web  Feed&#8221;.  The first thing we need to do is write the controller code. <a href="http://www.silverstripe.org/general-questions/show/269733#post269733">Mo,  in the SilverStripe forums</a> kindly supplied the original portion of  the code, which he pulled from the blog module. Don&#8217;t forget to change  the first parameter in the SimplePie function call to your feed URL.&nbsp;</p><pre class="brush: php;fontsize: 100; first-line: 1; ">function LatestNews() {<br />$output = new DataObjectSet();<br />include_once(Director::getAbsFile(SAPPHIRE_DIR . '/thirdparty/simplepie/SimplePie.php'));<br />$t1 = microtime(true);<br />$feed = new SimplePie('http://www.silverstripe.org/blog/rss', TEMP_FOLDER);<br />$feed-&gt;init();<br />if($items = $feed-&gt;get_items(0, 1)) {<br />foreach($items as $item) {<br /><br />// Cast the Date<br />$date = new Date('Date');<br />$date-&gt;setValue($item-&gt;get_date());<br /><br />// Cast the Title <br />$title = new Text('Title');<br />$title-&gt;setValue($item-&gt;get_title());<br />// Cast the description and strip<br />$desc = new Text('Description');<br />$desc-&gt;setValue($this-&gt;trunc(strip_tags($item-&gt;get_description()), 40));<br />$output-&gt;push(new ArrayData(array( <br />'Title' =&gt; $title, <br />'Date' =&gt; $date, <br />'Link' =&gt; $item-&gt;get_link(), <br />'Description' =&gt; $desc <br />)));<br />}<br />return $output;<br />}}</pre><p>The observant reader will notice, however, that I&#8217;ve  changed the number in the parameters of the get_items() call. This  change cuts it off at one entry. If you want more entries displayed,  simply change the second number to the number of your choice.  I&#8217;ve also added a small line of code just after getting the description:   $desc-&gt;setValue($this-&gt;trunc(strip_tags($item-&gt;get_description()),  40));  This line of code calls the truncate function, which needs to be added  in above the LatestNews() function (otherwise, you get errors because  PHP tries to call the function before it&#8217;s been loaded).</p><pre class="brush: php;fontsize: 100; first-line: 1; ">function trunc($phrase, $max_words){<br />&nbsp;$phrase_array = explode(' ',$phrase);<br />&nbsp;if(count($phrase_array) &gt; $max_words &amp;&amp; $max_words &gt; 0){<br />&nbsp;$phrase = implode(' ',array_slice($phrase_array, 0, $max_words)).'...';<br />&nbsp;}<br />&nbsp;return $phrase;<br />&nbsp;}</pre><p>I found this wonderful little piece of code at <a href="http://snippets.dzone.com/posts/show/412">DZone</a>. The  beauty of this function is that it&#8217;s small and truncates by words,  instead of characters. This way, our snippet isn&#8217;t cut off mid-word  (which could have some&#8230;interesting unforeseen consequences). It also  appends an ellipsis at the end of the truncated message, which is useful  at providing a visual indication that the article continues.  Next, we have to reference our new function in our template. This is as  simple as adding a few lines of template code, such as the following:</p><pre class="brush: xml;fontsize: 100; first-line: 1; ">&lt;% control LatestNews %&gt;<br />&lt;span id="blogTitle"&gt;$Title&lt;/span&gt;<br />&lt;span id="date"&gt;$Date&lt;/span&gt;<br />$Description &lt;a href="$Link"&gt;Read More&lt;/a&gt;<br />&lt;% end_control %&gt; </pre><p>For those unfamiliar with custom controls  (considering it&#8217;s one of the areas that is somewhat lacking in the  documentation), you&#8217;ll see that the control is named the same as the  function in the controller. This gives us access to its internal  variables, which we can use to display our feed output. This is  important, since you&#8217;ll noticed that $Title, which is also a  SilverStripe core variable, is used.  If you go back to your PHP code, you&#8217;ll see the list of variables we&#8217;ve  opened to the template:</p><pre class="brush: php;fontsize: 100; first-line: 1; ">$output-&gt;push(new ArrayData(array(<br />'Title' =&gt; $title,<br />'Date' =&gt; $date,<br />'Link' =&gt; $item-&gt;get_link(),<br />'Description' =&gt; $desc<br />))); }<br />return $output;</pre><p>Make note that the list on the left  are the names to use in the template (lacking this piece of knowledge  caused me a moment of confusion over why my $Desc variable wasn&#8217;t  displaying the blog snippet). Other than that, if you need other pieces  of information extracted from your blog, don&#8217;t forget to add it to this  list.  Back to the template code, $Link returns the raw URL, which means it&#8217;s  generally best to wrap in an &lt;a href=&gt; tag, such as how I have it,  above.  From there, format it how you want, using CSS and HTML tags, and voila!  You now have yourself a snippet from an external blog in your non-blog  site!</p></div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Shauna Gordon</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-24T00:00:00+00:00" pubdate data-updated="true">Mar 24<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/silverstripe/'>silverstripe</a>, <a class='category' href='/blog/categories/tech/'>tech</a>, <a class='category' href='/blog/categories/tutorials/'>tutorials</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://ShaunaGordon.com/blog/2010/03/24/create-latest-feed-in-silverstripe-with/" data-via="gordondev" data-counturl="http://ShaunaGordon.com/blog/2010/03/24/create-latest-feed-in-silverstripe-with/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/05/16/review-why-work-sucks-and-how-to-fix-it/" title="Next Post: Review: Why Work Sucks (And How to Fix It)">Review: Why Work Sucks (And How to Fix It) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+    <h1>Related Posts</h1>
+    <ul class="posts">
+    
+        <li class="related">
+        <a href="/blog/2011/01/11/silverstripe-syntax-highlighter-not/">(SilverStripe) Syntax Highlighter Not Working? Try This Workaround!</a>
+        </li>
+    
+        <li class="related">
+        <a href="/blog/2014/08/19/youre-not-alone/">You're Not Alone</a>
+        </li>
+    
+        <li class="related">
+        <a href="/blog/2014/10/15/dear-recruiters/">An Open Letter To Recruiters</a>
+        </li>
+    
+        <li class="related">
+        <a href="/blog/2013/01/25/project-octopress-theme-toytown/">Project: Octopress Theme Toytown</a>
+        </li>
+    
+        <li class="related">
+        <a href="/blog/2013/01/13/yet-another-new-home-for-the-blog/">Yet Another New Home for the Blog!</a>
+        </li>
+    
+    </ul>
+</section>
+
+<section>
+ <h1>Categories</h1>
+ <span id="tag-cloud"><a href='/blog/categories/business' style='font-size: 130.0%'>business</a> <a href='/blog/categories/community-contribution' style='font-size: 130.0%'>community contribution</a> <a href='/blog/categories/hackthestigma' style='font-size: 112.0%'>HackTheStigma</a> <a href='/blog/categories/history' style='font-size: 106.0%'>history</a> <a href='/blog/categories/html-css' style='font-size: 118.0%'>html/css</a> <a href='/blog/categories/laravel' style='font-size: 106.0%'>laravel</a> <a href='/blog/categories/legal' style='font-size: 106.0%'>legal</a> <a href='/blog/categories/mental-health' style='font-size: 106.0%'>mental health</a> <a href='/blog/categories/projects' style='font-size: 124.0%'>projects</a> <a href='/blog/categories/review' style='font-size: 124.0%'>review</a> <a href='/blog/categories/silverstripe' style='font-size: 112.0%'>silverstripe</a> <a href='/blog/categories/site' style='font-size: 136.0%'>site</a> <a href='/blog/categories/standard-practices' style='font-size: 106.0%'>standard practices</a> <a href='/blog/categories/tech' style='font-size: 160.0%'>tech</a> <a href='/blog/categories/themes' style='font-size: 118.0%'>themes</a> <a href='/blog/categories/tips' style='font-size: 112.0%'>tips</a> <a href='/blog/categories/travel' style='font-size: 106.0%'>travel</a> <a href='/blog/categories/tutorials' style='font-size: 118.0%'>tutorials</a> </span>
+</section>
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Shauna Gordon -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'gordondev';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ShaunaGordon.com/blog/2010/03/24/create-latest-feed-in-silverstripe-with/';
+        var disqus_url = 'http://ShaunaGordon.com/blog/2010/03/24/create-latest-feed-in-silverstripe-with/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

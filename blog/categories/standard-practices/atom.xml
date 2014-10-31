@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: standard practices | Shauna Gordon]]></title>
+  <link href="http://ShaunaGordon.com/blog/categories/standard-practices/atom.xml" rel="self"/>
+  <link href="http://ShaunaGordon.com/"/>
+  <updated>2014-10-31T02:35:10+00:00</updated>
+  <id>http://ShaunaGordon.com/</id>
+  <author>
+    <name><![CDATA[Shauna Gordon]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[box-sizing: border-box and Changes in How We Use the Box Model]]></title>
+    <link href="http://ShaunaGordon.com/blog/2013/02/19/box-sizing-border-box-and-changes-in-how-we-use-the-box-model/"/>
+    <updated>2013-02-19T00:00:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2013/02/19/box-sizing-border-box-and-changes-in-how-we-use-the-box-model</id>
+    <content type="html"><![CDATA[<p>Back in the days when Internet Explorer 6 reigned supreme, when Firefox was just getting its foothold and taking shares from IE, and Chrome was barely a Googler&rsquo;s pet project, the browsers followed different box models.</p>
+
+<p>Firefox (as well as the then little-known browsers Opera and Safari) followed the W3C standard box model, what is now known as &ldquo;content-box&rdquo;. Internet Explorer, on the other hand, followed its own box model, what we now call &ldquo;border-box&rdquo;. As Firefox began to rise and threatened IE&rsquo;s market share, Web developers were singing the praises of the content-box style box model (which was one of the many W3C standards that IE ignored, and Firefox implemented), to the point that when Microsoft finally released Internet Explorer 7, it implemented the standard box model.</p>
+
+<!-- more -->
+
+
+<h2>Fast forward seven years</h2>
+
+<p>Now, it&rsquo;s 2013, not only are more browsers on the market, but the market share has tipped dramatically away from Internet Explorer, and had spread out among several browsers. Competition has forced IE to be more standards compliant (IE10 even has text shadow support!). And, to top it all off, a CSS technique is on the rise: <code>box-sizing: border-box</code>. Yes, the very same method that IE6 used.</p>
+
+<h3>What changed?</h3>
+
+<p>I&rsquo;m only speculating, but I think it&rsquo;s a fundamental shift in how developers write both HTML and CSS &mdash; and perhaps a refinement of what they feel the standards should be &mdash; based on what works and what makes sense in practice. There are two main paradigm &ldquo;camps&rdquo; regarding how HTML and CSS should be architected and written.</p>
+
+<p>The first is the &ldquo;positional&rdquo; camp. The idea behind this one is that an element&rsquo;s style should be dictated by it&rsquo;s position in the document object model, or DOM. So, for example, all <code>&lt;li&gt;</code> elements within any <code>&lt;nav&gt;</code> element would have <code>display: inline-block</code> applied to them (making a horizontal navigation list), but if you moved that same set if <code>&lt;li&gt;</code> elements into an <code>&lt;article&gt;</code> element, it would become a vertical list.</p>
+
+<p>The other is the &ldquo;object oriented&rdquo; camp. The idea here is that the <code>&lt;ul&gt;</code> (unordered list) which is the parent of the above-mentioned <code>&lt;li&gt;</code> elements, would have one or more classes on them, such as &ldquo;horizontal&rdquo; or &ldquo;main-nav&rdquo;. This class, or set of classes, would dictate how the block of elements would look, regardless of where the block was placed. To use the same example, all <code>&lt;li&gt;</code> elements within the <code>&lt;ul class="main-nav"&gt;</code> block woud have <code>display: inline-block</code> on them. This styling would stay the same regardless of whether the block was inside a <code>&lt;nav&gt;</code> or <code>&lt;article&gt;</code> element.</p>
+
+<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+<p>One of the rules of object oriented design is that an object shouldn&rsquo;t care about any objects outside of itself. Each object handles itself and the initial creation of its children (the children then handle themselves). This isn&rsquo;t as rigid in CSS as it is in real programming languages, due to how CSS and document flow manipulation works, but the logic is still sound and works for the most part.</p>
+
+<p>However, <code>box-sizing: content-box</code> (the default box-sizing for modern browsers) breaks this rule, by, in a sense, making objects lie about their true size.</p>
+
+<p>For example, let&rsquo;s say I have a three-column layout, and I want each column to be equal width. Okay, that&rsquo;s easy, we do something like this:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Our 3-Column Layout <a href="http://jsfiddle.net/gordondev/yzfH2/">http://jsfiddle.net/gordondev/yzfH2/</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;three-column&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        Some content
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;three-column&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        Some content
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;three-column&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        Some content
+</span><span class='line'>    <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Our 3-Column Layout&rsquo;s CSS <a href="http://jsfiddle.net/gordondev/yzfH2/">http://jsfiddle.net/gordondev/yzfH2/</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.wrapper</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="m">960px</span><span class="p">;</span> <span class="c">/* Some arbitrary bounding. 960px is usually the width of fixed-width layouts. */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.three-column</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="m">33</span><span class="o">%</span><span class="p">;</span> <span class="c">/* 100%/3 = ~33% */</span>
+</span><span class='line'><span class="k">height</span><span class="o">:</span> <span class="m">200px</span><span class="p">;</span> <span class="c">/* Stick in an arbitrary height for display purposes. */</span>
+</span><span class='line'><span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+</span><span class='line'><span class="k">background</span><span class="o">:</span> <span class="m">#f00</span><span class="p">;</span> <span class="c">/* Red, again for display purposes */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.three-column</span><span class="nd">:first-child</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">background</span><span class="o">:</span> <span class="m">#0f0</span><span class="p">;</span> <span class="c">/* Green, to show the column differences */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.three-column</span><span class="nd">:last-child</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">background</span><span class="o">:</span> <span class="m">#00f</span><span class="p">;</span> <span class="c">/* Blue, to show the column differences */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>This gives us a nice little three-column layout:</p>
+
+<p><iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/gordondev/yzfH2/embedded/result/light/"></iframe></p>
+
+<p>This is great! But we&rsquo;d like some breathing room between the ends of the text and the edges of their blocks, like so:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Let&rsquo;s Add Padding <a href="http://jsfiddle.net/gordondev/yzfH2/1">http://jsfiddle.net/gordondev/yzfH2/1</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.three-column</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;/*</span> <span class="n">Existing</span> <span class="n">code</span> <span class="o">*/</span>
+</span><span class='line'><span class="k">padding</span><span class="o">:</span> <span class="m">0</span> <span class="m">5px</span><span class="p">;</span> <span class="c">/* 0 top and bottom padding, 5px left and right padding */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Let&rsquo;s take a look now!</p>
+
+<p><iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/gordondev/yzfH2/1/embedded/result/light/"></iframe></p>
+
+<p>Uh oh! That&rsquo;s not what we want. What happened? The boxes should only be 33% of the width!</p>
+
+<p>You&rsquo;d think that, wouldn&rsquo;t you? Remember what I said earlier about <code>box-sizing: content-box</code> making liars out of our elements? Well, this is it. You see, &ldquo;33%&rdquo; is only the width of the <em>content</em>. That doesn&rsquo;t include margins, padding, or borders.</p>
+
+<p>For most people (particularly the OOCSS-leaning people we mentioned earlier), this <em>really</em> doesn&rsquo;t make sense for padding. The purpose of padding is to add space from the outer edge, or border, of the container, in to the content. Basically the same way the margin lines on a piece of notebook paper work. Logically, this should reduce the space allotted to the content (likewise, the CSS margin would be roughly equivalent to the space between pages in an opened notebook &ndash; they exist outside the bounds of the edge of the container). Why, then, is the default behavior to make the box <em>bigger</em> when either margin or padding is added?</p>
+
+<p>Now, in the days of fixed-width layouts, this meant recalculating the width of the internal boxes, so that they fit within their parent. This is one of the core reasons why 960px was used as the go-to content width of fixed layouts &ndash; 960 divides into both 2 and 3 evenly (1, 2, and 3 columns being the most common layouts). So, in the days of the fixed-width layout, we&rsquo;d simply change the width of our boxes to accommodate things like margins, padding, and borders:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Now, Fix the Damn Layout <a href="http://jsfiddle.net/gordondev/yzfH2/4">http://jsfiddle.net/gordondev/yzfH2/4</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.three-column</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;/*</span> <span class="k">width</span><span class="o">:</span> <span class="m">33</span><span class="o">%</span><span class="p">;</span> <span class="o">*/</span>
+</span><span class='line'><span class="k">width</span><span class="o">:</span> <span class="m">310px</span><span class="p">;</span> <span class="c">/* 960px/3 = 320px, 320px-15px (5px left padding + 5px right padding) = 310px */</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>And look! Our layout works again!</p>
+
+<p><iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/gordondev/yzfH2/4/embedded/result/light/"></iframe></p>
+
+<p>But what happens when the width of the container is proportional, and scales based on the browser size, as with fluid layouts? Well, our layout breaks again, because it&rsquo;s dependent on a parent width of 960px. Once that parent width drops below 960px, our columns wrap again. Now, in some instances, this may be what we want (when a viewport gets too narrow, having columns drop underneath one another can help keep them wide enough to be readable), but we generally want some kind of give before that happens.</p>
+
+<p>Okay, so we want the columns to scale with their parent (at least to certain breakpoints, but that&rsquo;s a discussion for a different time), <em>and</em> we want the fixed-sized padding, is there a way to do that? Well, before <code>box-sizing: border-box</code> gained support, there actually was, but it wasn&rsquo;t all that pretty, especially when dealing with pixel-perfectionists. You just used percentages for everything:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Back to fluid? <a href="http://jsfiddle.net/gordondev/yzfH2/3">http://jsfiddle.net/gordondev/yzfH2/3</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.three-column</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="m">32</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'><span class="k">padding</span><span class="o">:</span> <span class="m">0</span> <span class="o">.</span><span class="m">5</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/gordondev/yzfH2/3/embedded/result/light/"></iframe></p>
+
+<p>This works great&hellip;except for the fact that the padding also expands or contracts. If that&rsquo;s what you want, then great! If you&rsquo;re like me, and have to deal with people who expect those padding to stay the same, then you&rsquo;re <abbr title="Shit out of Luck">SoL</abbr> (or, at least, you used to be).</p>
+
+<p>It&rsquo;s also possible to put the margins or padding on the child elements, but that would either require an extra &ldquo;wrapper&rdquo; element, or some not-so-ideal <code>.three-column *</code> type selectors. Both of these options work, but are ugly and not very elegant. Plus, you&rsquo;d have to do that for everything that is affected by this issue, instead of just making it do something sane to begin with.</p>
+
+<h2>This sounds like a job for&hellip;.!</h2>
+
+<p>With <code>box-sizing: border-box</code>, you can now use the percentage widths, with fixed-sized padding, to get this:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Box-sizing to the rescue! <a href="http://jsfiddle.net/gordondev/yzfH2/5">http://jsfiddle.net/gordondev/yzfH2/5</a> jsFiddle </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="o">*</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span> <span class="c">/* Firefox still uses the prefixed version */</span>
+</span><span class='line'><span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="nc">.three-column</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">width</span><span class="o">:</span> <span class="m">33</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'><span class="k">padding</span><span class="o">:</span> <span class="m">0</span> <span class="m">5px</span><span class="p">;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><iframe style="width: 100%; height: 300px" frameborder="0" seamless="seamless" src="http://jsfiddle.net/gordondev/yzfH2/5/embedded/result/light/"></iframe></p>
+
+<p>Yay! And look, this actually makes sense (to most people)! If I tell the element that I want it to be 33% of its parent, that means I want the <em>everything</em> within the element&rsquo;s borders to be 33% of its parent.</p>
+
+<h2>I said all that to say this&hellip;</h2>
+
+<p>As you can see, with the standard <code>box-sizing: content-box</code>, making flexibile layouts is a nightmare, especially when trying to keep things lean for our mobile-device-using friends. The shift toward responsive and flexible layouts has necessitated a need for stricter adherence to object-oriented types of rules, for the sake of our sanity.</p>
+]]></content>
+  </entry>
+  
+</feed>

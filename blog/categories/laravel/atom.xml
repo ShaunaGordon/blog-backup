@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: laravel | Shauna Gordon]]></title>
+  <link href="http://ShaunaGordon.com/blog/categories/laravel/atom.xml" rel="self"/>
+  <link href="http://ShaunaGordon.com/"/>
+  <updated>2014-10-31T02:35:10+00:00</updated>
+  <id>http://ShaunaGordon.com/</id>
+  <author>
+    <name><![CDATA[Shauna Gordon]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Project - Raze West Virginia]]></title>
+    <link href="http://ShaunaGordon.com/blog/2013/11/17/project-raze-west-virginia/"/>
+    <updated>2013-11-17T14:37:00+00:00</updated>
+    <id>http://ShaunaGordon.com/blog/2013/11/17/project-raze-west-virginia</id>
+    <content type="html"><![CDATA[<h2>The Client, and a Little History</h2>
+
+<p>While working at Fahlgren Mortine, I had the opportunity to work with the West Virginia Department of Health and Human Resources (DHHR) on the new website for their teen anti-tobacco campaign, Raze West Virgina.</p>
+
+<p>I&rsquo;m already familiar with teen anti-tobacco campaigns, having been involved in Pennsylvania&rsquo;s for a time when I was a teen, myself, but I found out that what makes West Virginia&rsquo;s somewhat unique &ndash; and very important &ndash; is that West Virginia ranks as the highest, or second highest (in some subcategories), of tobacco users nearly across the board, from adults, to pregnant women, to teens. When nearly a third of everyone around you, no matter the demographic, uses tobacco, that&rsquo;s a lot of peer pressure.</p>
+
+<h3>Enter Raze</h3>
+
+<p>Raze is one of several youth anti-tobacco campaigns in West Virginia. It&rsquo;s a little different from many others, because it&rsquo;s not just conferences. Rather, it&rsquo;s groups of teens at the school and community levels (&ldquo;crews&rdquo;), sponsored by an adult, that help create a grassroots anti-tobacco movement. They do this by organizing what they call &ldquo;commotions,&rdquo; or micro-events to help raise awareness and &ldquo;tear down tobacco lies.&rdquo; These commotions can be as simple as handing out fliers, or as large as holding an assembly.</p>
+
+<p>As an added incentive, organizing commotions earns the crew a certain number of points. At various thresholds, the crew then earns gear, ranging from pens to backpacks, emblazoned with the Raze logo.</p>
+
+<!-- more -->
+
+
+<h3>Our Role</h3>
+
+<p>As West Virginia DHHR&rsquo;s advertising campaign provider, Fahlgren Mortine was provided a number of tasks in an effort to rebrand the Raze campaign. Among them, was redoing the website and crew management system.</p>
+
+<h2>The Challenge</h2>
+
+<p>Raze had an existing crew management system and public-facing website, but it was getting old, and had become unweildly to maintain and use. They needed something more modern, more robust, and easier to use and manage. They needed something tailored to their needs, instead of an off-the-shelf solution that needed to be hacked around and have dozens of add-ons tacked on.</p>
+
+<h2>The Solution</h2>
+
+<p>Instead of going with another off-the-shelf solution, we decided to build a custom system from the ground up. This would allow us to provide them with only what they need, and provide it when they need it.</p>
+
+<h3>The Tech</h3>
+
+<p>In order to keep the codebase maintainable, we used the MVC framework, <a href="http://laravel.com/">Laravel</a>, as the backbone of the application. Combined with the PHP package management system, <a href="http://getcomposer.org/">Composer</a>, this allows us to swap out certain parts (particularly third-party libraries) nearly at will, without much consequence to the application as a whole.</p>
+
+<p><a class="right" href="/images/portfolio/raze_announcement_tooltip.jpg" title="The Dashboard page" target="_blank"><img src="/images/portfolio/thumbs/raze_announcement_tooltip.jpg" alt="Stylized tooltips to add that application feel" /></a></p>
+
+<p>To make development of the interface faster and easier, the dashboard interface was built with the help of <a href="http://getbootstrap.com/">Bootstrap</a>. This allowed us to spend less time on building interface components and making them look good, and more time putting them together into a user-friendly interface. It also allowed us to add small garnishes, such as stylized tooltips, for browsers that support the extra features.</p>
+
+<p>Even with the help of Bootstrap and Laravel, we still found ourselves using quite a bit of JavaScript, as well as a fair amount of CSS customization. To help keep these maintainable, and to allow us to generate minimized JavaScript and CSS files, we used the CSS preprocessor, <a href="http://sass-lang.com/">Sass</a>, and the <a href="http://nodejs.org/">Node.js</a>-based task runner, <a href="http://gruntjs.com/">Grunt</a>.</p>
+
+<h3>The Logic</h3>
+
+<p>While we also redid the public facing site (<a href="https://razewv.com">razewv.com</a>), the dashboard interface at <a href="https://razewv.com/manage">razewv.com/manage</a> is where the bulk of the work, and the heavy lifting, are done.</p>
+
+<p><a class="left" href="/images/portfolio/raze_dashboard.jpg" title="The Dashboard page" target="_blank"><img src="/images/portfolio/thumbs/raze_dashboard.jpg" alt="The Raze Dashboard" /></a></p>
+
+<p>At its core, it&rsquo;s a user and event management system. Adults and students sign up and join their crews. Adult advisors and crew leaders can schedule commotions based on pretermined choices, and can register for region and organization-wide events (such as Regional Raze Kickoff Events). When the commotions are completed and logged, the system tallies up the crew&rsquo;s total points, and standing compared to other crews, based on the point values of the commotions they performed.</p>
+
+<p>Site Administrators can also generate reports for various statistics, in addition to taking suggestions for, and adding, new commotions, scheduling events, and sending announcements.</p>
+
+<h2>Final Thoughts</h2>
+
+<p>This was one of our first built-from-scratch content management systems, so one of the biggest lessons was that such systems are quite a bit larger than they appear.</p>
+
+<p>It was a fun project, though, and really allowed us to stretch our legs when it came to Laravel. It also allowed us to start incorporating some of the automation capabilities of Grunt, which will prove to be invaluable in future projects.</p>
+]]></content>
+  </entry>
+  
+</feed>
